@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Work &amp; Video Portfolio — WebSideUp | Selected Case Studies</title>
+  <meta name="description" content="Explore WebSideUp's selected portfolio across motion, social media, real estate, hospitality, lighting, and creator brands. Proof over promises.">
+  <meta name="theme-color" content="#07111d">
+  <link rel="icon" type="image/png" href="assets/logos/logo-trimmed.png">
+  
+  <!-- Reference Typography: DM Sans + Manrope -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="system.css">
+  <link rel="stylesheet" href="work.css">
+</head>
+<body>
+
+  <div id="scrollProgress" role="presentation" aria-hidden="true"></div>
+  <div id="cursor" aria-hidden="true"></div>
+
+  <!-- GLOBAL NAVIGATION -->
+  <header class="site-header" id="siteHeader">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo" aria-label="WebSideUp — Home">
+        <img src="assets/logos/logo.png" alt="WebSideUp Logo" width="160" height="60">
+      </a>
+      <nav class="nav-links" aria-label="Primary Navigation">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="services.html" class="nav-link">Services</a>
+        <a href="work.html" class="nav-link active" aria-current="page">Work</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+      <div class="nav-right">
+                <button id="themeToggle" class="theme-toggle" aria-label="Toggle Dark Mode">
+          <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+          <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18" style="display:none;"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+        </button>
+        <a href="https://www.instagram.com/websideup/" target="_blank" rel="noopener noreferrer" class="nav-cta" id="navCta">Let's Talk <span aria-hidden="true">↗</span></a>
+        <button class="nav-toggle" id="navToggle" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobileDrawer">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <div class="mobile-drawer" id="mobileDrawer" aria-hidden="true">
+    <nav class="mobile-nav-links" aria-label="Mobile Navigation">
+      <a href="index.html" class="mobile-nav-link">Home</a>
+      <a href="services.html" class="mobile-nav-link">Services</a>
+      <a href="work.html" class="mobile-nav-link active" aria-current="page">Work</a>
+      <a href="contact.html" class="mobile-nav-link">Contact</a>
+    </nav>
+    <div class="mobile-nav-meta">
+      <a href="https://www.instagram.com/websideup/" target="_blank" rel="noopener noreferrer" class="mobile-nav-cta">Let's Talk ↗</a>
+      <p class="type-meta" style="margin-top:1.5rem;color:var(--c-muted)">Delhi NCR, India · 28.6139° N</p>
+      <a href="mailto:websideup@gmail.com" class="type-meta" style="color:var(--c-muted);margin-top:0.25rem">websideup@gmail.com</a>
+      <a href="tel:+919310150768" class="type-meta" style="color:var(--c-muted);margin-top:0.25rem">+91-9310150768</a>
+    </div>
+  </div>
+
+  <main>
+
+    <!-- PAGE HERO & INTRO -->
+    <section class="work-hero" aria-labelledby="workHeading">
+      <div class="container">
+        <span class="eyebrow reveal-on-load" style="animation-delay:0.08s">FEATURED WORK</span>
+        <h1 class="type-display work-main-title reveal-on-load" id="workHeading" style="animation-delay:0.18s">
+          PROOF OVER<br>
+          <span class="accent">PROMISES.</span>
+        </h1>
+        <p class="type-body work-hero-desc reveal-on-load" style="animation-delay:0.28s">
+          Six focused production chapters. Commercial cinematography, creator platforms, architectural walkthroughs, culinary storytelling, luxury lighting, and interior living spaces.
+        </p>
+      </div>
+
+      <!-- Quick Section Jump Index -->
+      <nav class="project-index" aria-label="Project index">
+        <div class="container">
+          <ol class="project-index-list" role="list">
+            <li><a href="#proj-01-product" class="project-index-item active">01 PRODUCT &amp; COMMERCIAL</a></li>
+            <li><a href="#proj-02-creator" class="project-index-item">02 CREATOR BRAND</a></li>
+            <li><a href="#proj-03-realestate" class="project-index-item">03 REAL ESTATE</a></li>
+            <li><a href="#proj-04-cafe" class="project-index-item">04 CAFE &amp; DINING</a></li>
+            <li><a href="#proj-05-lighting" class="project-index-item">05 LIGHTING BRAND</a></li>
+            <li><a href="#proj-06-interior" class="project-index-item">06 INTERIOR DESIGN</a></li>
+          </ol>
+        </div>
+      </nav>
+    </section>
+
+    <!-- CONTINUOUS PROJECT CHAPTERS STREAM -->
+    <div class="project-stream">
+
+      <!-- =====================================================================
+           CHAPTER 01 — PRODUCT & COMMERCIAL (Flagship Product Reel)
+      ====================================================================== -->
+      <section class="project-section media-left reveal" id="proj-01-product" aria-labelledby="proj-01-title">
+        <div class="container">
+          <div class="project-layout">
+            <div class="project-media-col">
+              <div class="project-media-frame">
+                <div class="media-inner aspect-9-16">
+                  <video
+                    class="project-media-video"
+                    src="/videos/compressed-final/prdocut%20focus%20-web.mp4"
+                    autoplay
+                    muted
+                    loop
+                    playsinline
+                    preload="metadata"
+                  ></video>
+                </div>
+                <span class="video-play-badge"><span class="play-icon">▶</span> Product Reel</span>
+                <div class="media-overlay">
+                  <span class="overlay-label">01 · PRODUCT &amp; COMMERCIAL</span>
+                </div>
+              </div>
+            </div>
+            <div class="project-text-col">
+              <div class="project-meta-row">
+                <span class="project-num">CHAPTER 01</span>
+                <span class="project-category">PRODUCT &amp; COMMERCIAL CONTENT</span>
+              </div>
+              <h2 class="project-title" id="proj-01-title">Products,<br>Made to Stand Out</h2>
+              <p class="project-lead">
+                We produce high-impact product cinematography and commercial reels engineered to captivate attention and accelerate purchasing decisions.
+              </p>
+              <div class="project-specs">
+                <div class="project-spec-item">
+                  <span class="spec-key">DELIVERABLES</span>
+                  <span class="spec-val">Macro Cinematography, Studio Lighting, 9:16 Commercials</span>
+                </div>
+                <div class="project-spec-item">
+                  <span class="spec-key">IMPACT</span>
+                  <span class="spec-val">Higher Conversion Velocity &amp; Brand Prestige</span>
+                </div>
+                <div class="project-spec-item">
+                  <span class="spec-key">FORMAT</span>
+                  <span class="spec-val">9:16 Vertical Commercial Reel + Studio Output</span>
+                </div>
+              </div>
+              <ul class="project-tags">
+                <li class="project-tag">Product Motion</li>
+                <li class="project-tag">Commercial Video</li>
+                <li class="project-tag">Lighting Direction</li>
+                <li class="project-tag">Social Conversion</li>
+              </ul>
+              <div class="project-actions">
+                <a href="https://www.instagram.com/websideup/" target="_blank" rel="noopener noreferrer" class="btn-primary">Commission a Commercial Shoot ↗</a>
+                <a href="contact.html" class="btn-secondary">Discuss Scope</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- =====================================================================
+           CHAPTER 02 — SOCIAL MEDIA / CREATOR (New Creator Reel Asset)
+      ====================================================================== -->
+      <section class="project-section media-right reveal" id="proj-02-creator" aria-labelledby="proj-02-title">
+        <div class="container">
+          <div class="project-layout">
+            <div class="project-media-col">
+              <div class="project-media-frame">
+                <div class="media-inner aspect-9-16">
+                  <video
+                    class="project-media-video"
+                    src="/videos/compressed-final/cretaor%20brand%20-web.mp4"
+                    poster="assets/posters/poster-05-influencer.jpg"
+                    autoplay
+                    muted
+                    loop
+                    playsinline
+                    preload="metadata"
+                  ></video>
+                </div>
+                <span class="video-play-badge"><span class="play-icon">▶</span> Creator Reel</span>
+                <div class="media-overlay">
+                  <span class="overlay-label">02 · SOCIAL &amp; CREATOR</span>
+                </div>
+              </div>
+            </div>
+            <div class="project-text-col">
+              <div class="project-meta-row">
+                <span class="project-num">CHAPTER 02</span>
+                <span class="project-category">SOCIAL MEDIA &amp; CREATOR</span>
+              </div>
+              <h2 class="project-title" id="proj-02-title">Creator Brand &amp;<br>Personal Platform</h2>
+              <p class="project-lead">
+                Empowering creators with owned audience ecosystems independent of algorithm fluctuations — bespoke video production, motion reels, and brand identity.
+              </p>
+              <div class="project-specs">
+                <div class="project-spec-item">
+                  <span class="spec-key">DELIVERABLES</span>
+                  <span class="spec-val">Creator Reels, Personal Branding, Web Architecture</span>
+                </div>
+                <div class="project-spec-item">
+                  <span class="spec-key">IMPACT</span>
+                  <span class="spec-val">Organic Reach Expansion &amp; Direct Sponsorship Funnel</span>
+                </div>
+                <div class="project-spec-item">
+                  <span class="spec-key">FORMAT</span>
+                  <span class="spec-val">9:16 Vertical Short-Form Motion Series</span>
+                </div>
+              </div>
+              <ul class="project-tags">
+                <li class="project-tag">Motion Direction</li>
+                <li class="project-tag">Creator Strategy</li>
+                <li class="project-tag">Brand Platform</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- =====================================================================
+           CHAPTER 03 — REAL ESTATE WALKTHROUGH
+      ====================================================================== -->
+      <section class="project-section media-left reveal" id="proj-03-realestate" aria-labelledby="proj-03-title">
+        <div class="container">
+          <div class="project-layout">
+            <div class="project-text-col">
+              <div class="project-meta-row">
+                <span class="project-num">CHAPTER 03</span>
+                <span class="project-category">REAL ESTATE DEVELOPMENT</span>
+              </div>
+              <h2 class="project-title" id="proj-03-title">Luxury Real Estate<br>Architecture</h2>
+              <p class="project-lead">
+                End-to-end digital launch strategy for a premium property development — from architectural video walkthroughs to high-performance web engineering.
+              </p>
+              <div class="project-specs">
+                <div class="project-spec-item">
+                  <span class="spec-key">DELIVERABLES</span>
+                  <span class="spec-val">Video Walkthroughs, Web Architecture, Paid Ads, SEO</span>
+                </div>
+                <div class="project-spec-item">
+                  <span class="spec-key">IMPACT</span>
+                  <span class="spec-val">High-Intent Buyer Inquiry Generation &amp; Prestige Positioning</span>
+                </div>
+                <div class="project-spec-item">
+                  <span class="spec-key">FORMAT</span>
+                  <span class="spec-val">9:16 Architectural Video Showcase</span>
+                </div>
+              </div>
+              <ul class="project-tags">
+                <li class="project-tag">Property Walkthrough</li>
+                <li class="project-tag">Web Engineering</li>
+                <li class="project-tag">High-Intent Paid Media</li>
+              </ul>
+            </div>
+            <div class="project-media-col">
+              <div class="project-media-frame">
+                <div class="media-inner aspect-9-16">
+                  <video
+                    class="project-media-video"
+                    src="/videos/compressed-final/real%20estate%20-web.mp4"
+                    poster="assets/posters/poster-02-realestate.jpg"
+                    autoplay
+                    muted
+                    loop
+                    playsinline
+                    preload="metadata"
+                  ></video>
+                </div>
+                <span class="video-play-badge"><span class="play-icon">▶</span> Walkthrough Reel</span>
+                <div class="media-overlay">
+                  <span class="overlay-label">03 · REAL ESTATE</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- =====================================================================
+           CHAPTER 04 — NEW CAFE REEL ASSET
+      ====================================================================== -->
+      <section class="project-section media-right reveal" id="proj-04-cafe" aria-labelledby="proj-04-title">
+        <div class="container">
+          <div class="project-layout">
+            <div class="project-media-col">
+              <div class="project-media-frame">
+                <div class="media-inner aspect-9-16">
+                  <video
+                    class="project-media-video"
+                    src="/videos/compressed-final/cafe%20-web.mp4"
+                    poster="assets/posters/poster-03-cafe.jpg"
+                    autoplay
+                    muted
+                    loop
+                    playsinline
+                    preload="metadata"
+                  ></video>
+                </div>
+                <span class="video-play-badge"><span class="play-icon">▶</span> Hospitality Reel</span>
+                <div class="media-overlay">
+                  <span class="overlay-label">04 · CAFE &amp; DINING</span>
+                </div>
+              </div>
+            </div>
+            <div class="project-text-col">
+              <div class="project-meta-row">
+                <span class="project-num">CHAPTER 04</span>
+                <span class="project-category">HOSPITALITY &amp; DINING</span>
+              </div>
+              <h2 class="project-title" id="proj-04-title">Artisanal Cafe &amp;<br>Dining Identity</h2>
+              <p class="project-lead">
+                Atmospheric digital storytelling and appetizing motion content for an artisanal culinary brand expanding its regional footprint.
+              </p>
+              <div class="project-specs">
+                <div class="project-spec-item">
+                  <span class="spec-key">DELIVERABLES</span>
+                  <span class="spec-val">F&amp;B Motion Shoots, Social Content, Brand Direction</span>
+                </div>
+                <div class="project-spec-item">
+                  <span class="spec-key">IMPACT</span>
+                  <span class="spec-val">Foot-Traffic Acceleration &amp; Regional Brand Cult Following</span>
+                </div>
+                <div class="project-spec-item">
+                  <span class="spec-key">FORMAT</span>
+                  <span class="spec-val">9:16 Culinary Motion Direction</span>
+                </div>
+              </div>
+              <ul class="project-tags">
+                <li class="project-tag">Culinary Storytelling</li>
+                <li class="project-tag">Sensory Motion</li>
+                <li class="project-tag">Social Growth</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- =====================================================================
+           CHAPTER 05 — LIGHTING BRAND
+      ====================================================================== -->
+      <section class="project-section media-left reveal" id="proj-05-lighting" aria-labelledby="proj-05-title">
+        <div class="container">
+          <div class="project-layout">
+            <div class="project-text-col">
+              <div class="project-meta-row">
+                <span class="project-num">CHAPTER 05</span>
+                <span class="project-category">E-COMMERCE &amp; LIGHTING</span>
+              </div>
+              <h2 class="project-title" id="proj-05-title">Designer Lighting<br>Brand</h2>
+              <p class="project-lead">
+                Growth strategy and product motion for an architectural lighting studio — precision search marketing, PPC, and e-commerce engineering.
+              </p>
+              <div class="project-specs">
+                <div class="project-spec-item">
+                  <span class="spec-key">DELIVERABLES</span>
+                  <span class="spec-val">Product Motion, E-Commerce Engineering, Google PPC, SEO</span>
+                </div>
+                <div class="project-spec-item">
+                  <span class="spec-key">IMPACT</span>
+                  <span class="spec-val">E-Commerce SKU Conversions &amp; Performance Max Scale</span>
+                </div>
+                <div class="project-spec-item">
+                  <span class="spec-key">FORMAT</span>
+                  <span class="spec-val">9:16 Studio Product Video</span>
+                </div>
+              </div>
+              <ul class="project-tags">
+                <li class="project-tag">Product Motion</li>
+                <li class="project-tag">Commercial Search</li>
+                <li class="project-tag">E-Commerce UX</li>
+              </ul>
+            </div>
+            <div class="project-media-col">
+              <div class="project-media-frame">
+                <div class="media-inner aspect-9-16">
+                  <video
+                    class="project-media-video"
+                    src="/videos/compressed-final/lighting-web.mp4"
+                    poster="assets/posters/poster-04-lighting.jpg"
+                    autoplay
+                    muted
+                    loop
+                    playsinline
+                    preload="metadata"
+                  ></video>
+                </div>
+                <span class="video-play-badge"><span class="play-icon">▶</span> Product Reel</span>
+                <div class="media-overlay">
+                  <span class="overlay-label">05 · LIGHTING BRAND</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- =====================================================================
+           CHAPTER 06 — INTERIOR DESIGN
+      ====================================================================== -->
+      <section class="project-section media-right reveal" id="proj-06-interior" aria-labelledby="proj-06-title">
+        <div class="container">
+          <div class="project-layout">
+            <div class="project-media-col">
+              <div class="project-media-frame">
+                <div class="media-inner aspect-9-16">
+                  <video
+                    class="project-media-video"
+                    src="/videos/compressed-final/interiror%20desgn-web.mp4"
+                    poster="assets/posters/poster-01-social.jpg"
+                    autoplay
+                    muted
+                    loop
+                    playsinline
+                    preload="metadata"
+                  ></video>
+                </div>
+                <span class="video-play-badge"><span class="play-icon">▶</span> Spatial Reel</span>
+                <div class="media-overlay">
+                  <span class="overlay-label">06 · INTERIOR DESIGN</span>
+                </div>
+              </div>
+            </div>
+            <div class="project-text-col">
+              <div class="project-meta-row">
+                <span class="project-num">CHAPTER 06</span>
+                <span class="project-category">INTERIOR ARCHITECTURE</span>
+              </div>
+              <h2 class="project-title" id="proj-06-title">Interior Design &amp;<br>Living Spaces</h2>
+              <p class="project-lead">
+                Spatial motion storytelling and brand presence for an interior design studio crafting bespoke residential and commercial environments.
+              </p>
+              <div class="project-specs">
+                <div class="project-spec-item">
+                  <span class="spec-key">DELIVERABLES</span>
+                  <span class="spec-val">Interior Reels, Visual Identity, Content Strategy</span>
+                </div>
+                <div class="project-spec-item">
+                  <span class="spec-key">IMPACT</span>
+                  <span class="spec-val">High-Net-Worth Client Inquiries &amp; Design Authority</span>
+                </div>
+                <div class="project-spec-item">
+                  <span class="spec-key">FORMAT</span>
+                  <span class="spec-val">9:16 Cinematic Spatial Motion</span>
+                </div>
+              </div>
+              <ul class="project-tags">
+                <li class="project-tag">Spatial Motion</li>
+                <li class="project-tag">Architectural Video</li>
+                <li class="project-tag">Brand Narrative</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </div>
+
+    <!-- PORTFOLIO BOTTOM CTA -->
+    <section class="portfolio-cta-section">
+      <div class="container">
+        <div class="portfolio-cta-inner">
+          <div>
+            <span class="eyebrow">START YOUR PROJECT</span>
+            <h2 class="portfolio-cta-title" style="margin-top:0.5rem">
+              Have a Project in Mind?
+            </h2>
+          </div>
+          <div style="display:flex;gap:1rem;flex-wrap:wrap">
+            <a href="https://www.instagram.com/websideup/" target="_blank" rel="noopener noreferrer" class="btn-primary">
+              Connect on Instagram ↗
+            </a>
+            <a href="contact.html" class="btn-secondary">
+              Direct Contact Details ↗
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- SITE FOOTER -->
+  <footer class="site-footer" id="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand-col">
+          <img src="assets/logos/logo-light.png" alt="WebSideUp" class="footer-brand-mark" width="130" height="48">
+          <p class="footer-tagline">
+            Digital experiences, campaigns and growth systems built to make brands impossible to ignore.
+          </p>
+        </div>
+        <div class="footer-col">
+          <p class="footer-col-label">Explore</p>
+          <a href="index.html">Home</a>
+          <a href="services.html">Services</a>
+          <a href="work.html">Our Work</a>
+          <a href="contact.html">Contact</a>
+        </div>
+        <div class="footer-col">
+          <p class="footer-col-label">Direct Connect</p>
+          <a href="https://www.instagram.com/websideup/" target="_blank" rel="noopener noreferrer">Instagram ↗</a>
+          <a href="mailto:websideup@gmail.com">websideup@gmail.com</a>
+          <a href="tel:+919310150768">+91-9310150768</a>
+        </div>
+        <div class="footer-col">
+          <p class="footer-col-label">Location</p>
+          <p style="color:#ffffff">Delhi NCR, India</p>
+          <p class="type-meta" style="color:#6e7885;margin-top:0.25rem">Anand Vihar, Delhi-110092</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-copy">© 2026 WebSideUp. All rights reserved.</p>
+        <a href="#siteHeader" class="footer-back-top">Back to top ↑</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="site.js"></script>
+  <script src="work.js"></script>
+</body>
+</html>

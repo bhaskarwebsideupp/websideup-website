@@ -1,0 +1,290 @@
+/* ==============================================
+   ABOUT PAGE STYLES
+   ============================================== */
+.about-body {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  overflow-x: hidden;
+}
+
+/* ==============================================
+   ABOUT HERO
+   ============================================== */
+.about-hero {
+  padding: calc(var(--nav-height) + var(--space-4xl)) var(--space-lg) var(--space-4xl);
+  min-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  z-index: 10;
+}
+
+.about-hero-container {
+  max-width: var(--max-width-lg);
+  width: 100%;
+  margin: 0 auto;
+}
+
+.about-eyebrow {
+  margin-bottom: var(--space-xl);
+}
+
+.about-eyebrow .eyebrow-text {
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  letter-spacing: 0.1em;
+  color: var(--color-orange);
+  text-transform: uppercase;
+}
+
+.about-main-title {
+  font-family: var(--font-sans);
+  font-size: clamp(2.5rem, 6vw, 5.5rem);
+  line-height: 0.95;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  margin-bottom: var(--space-2xl);
+  text-transform: uppercase;
+  max-width: 1200px;
+}
+
+.about-main-title .title-line {
+  display: block;
+}
+
+.about-lead-wrapper {
+  max-width: 600px;
+}
+
+.about-lead-text {
+  font-family: var(--font-sans);
+  font-size: clamp(1.125rem, 1.5vw, 1.25rem);
+  line-height: 1.6;
+  color: var(--color-text-muted);
+  font-weight: 400;
+}
+
+.hero-line-decoration {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 15vh;
+  width: 1px;
+  background: var(--color-border);
+  overflow: hidden;
+}
+
+.hero-line-decoration::after {
+  content: '';
+  position: absolute;
+  top: -100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--color-orange);
+  animation: dropLine 2s ease-in-out infinite;
+}
+
+@keyframes dropLine {
+  0% { top: -100%; }
+  100% { top: 100%; }
+}
+
+/* ==============================================
+   VISUAL MARK SECTION
+   ============================================== */
+.about-mark-section {
+  padding: var(--space-4xl) var(--space-lg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  border-top: 1px solid var(--color-border-subtle);
+  border-bottom: 1px solid var(--color-border-subtle);
+  background: var(--color-bg-alt);
+}
+
+.wu-mark {
+  font-family: var(--font-sans);
+  font-size: clamp(15rem, 30vw, 35rem);
+  line-height: 0.8;
+  font-weight: 800;
+  letter-spacing: -0.05em;
+  color: transparent;
+  -webkit-text-stroke: 1px var(--color-border);
+  position: relative;
+}
+
+.wu-mark::before {
+  content: 'WU';
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: transparent;
+  -webkit-text-stroke: 1px var(--color-orange);
+  clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+  transition: clip-path 1.5s var(--easing-standard);
+}
+
+.about-mark-section.is-in-view .wu-mark::before {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+}
+
+/* ==============================================
+   BRAND PHILOSOPHY
+   ============================================== */
+.about-philosophy {
+  padding: var(--space-4xl) var(--space-lg);
+  max-width: var(--max-width-lg);
+  margin: 0 auto;
+}
+
+.philosophy-statement {
+  margin-bottom: var(--space-3xl);
+  font-family: var(--font-sans);
+  font-size: clamp(3rem, 7vw, 6rem);
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.03em;
+}
+
+.statement-right {
+  text-align: right;
+}
+
+.philosophy-statement:last-child {
+  margin-bottom: 0;
+}
+
+/* ==============================================
+   COMPANY FACTS
+   ============================================== */
+.about-facts {
+  padding: var(--space-4xl) var(--space-lg);
+  border-top: 1px solid var(--color-border);
+  background: var(--color-bg);
+}
+
+.facts-grid {
+  max-width: var(--max-width-lg);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: var(--space-2xl);
+}
+
+.fact-label {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  color: var(--color-orange);
+  letter-spacing: 0.1em;
+  margin-bottom: var(--space-md);
+  text-transform: uppercase;
+}
+
+.fact-value {
+  font-family: var(--font-sans);
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: var(--color-text);
+  margin: 0;
+}
+
+.fact-link {
+  display: block;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  margin-bottom: var(--space-xs);
+}
+
+.fact-link:hover {
+  color: var(--color-orange);
+}
+
+/* ==============================================
+   OUTRO
+   ============================================== */
+.about-outro {
+  padding: var(--space-4xl) var(--space-lg);
+  text-align: center;
+  border-top: 1px solid var(--color-border);
+  background: var(--color-bg-alt);
+}
+
+.outro-content {
+  max-width: var(--max-width-md);
+  margin: 0 auto;
+}
+
+.outro-title {
+  font-family: var(--font-sans);
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  line-height: 0.95;
+  font-weight: 800;
+  margin-bottom: var(--space-2xl);
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+}
+
+.outro-title .title-line {
+  display: block;
+}
+
+/* ==============================================
+   ANIMATIONS (Masked Typography & Fades)
+   ============================================== */
+.animate-mask {
+  overflow: hidden;
+}
+
+.animate-mask-line {
+  display: block;
+  overflow: hidden;
+}
+
+.mask-inner {
+  display: block;
+  transform: translateY(110%);
+  transition: transform 1.2s var(--easing-standard);
+}
+
+.is-loaded .mask-inner {
+  transform: translateY(0);
+}
+
+.animate-fade-up {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 1s var(--easing-standard), transform 1s var(--easing-standard);
+  transition-delay: 0.4s;
+}
+
+.is-loaded .animate-fade-up,
+.is-in-view .animate-fade-up {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.animate-fade-in-slow {
+  opacity: 0;
+  transition: opacity 2s ease;
+}
+
+.is-in-view.animate-fade-in-slow,
+.is-in-view .animate-fade-in-slow {
+  opacity: 1;
+}
+
+.scroll-reveal-text {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s var(--easing-standard), transform 0.8s var(--easing-standard);
+}
+
+.is-in-view .scroll-reveal-text {
+  opacity: 1;
+  transform: translateY(0);
+}

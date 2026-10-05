@@ -1,0 +1,31 @@
+# Operating System & Environment
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+.DS_Store
+
+# Editor & IDE files
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Large design source files (kept locally)
+*.fig
+
+# Testing screenshots & scratch folders
+screenshots/
+trusted logo brands/
+capture-*.ps1
+test-capture.ps1
+fix-links*.ps1
+test-*-mobile.html
+
+# External template downloads
+agency template/
+
+# Temporary & backup files
+*.tmp
+*.bak
+*.opt.mp4

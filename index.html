@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>WEBSIDEUP — Full-Service Digital Creative Agency, Delhi NCR</title>
+  <meta name="description"
+    content="WEBSIDEUP is a full-service creative agency based in Delhi. Strategy, websites, content creation, social media, and performance marketing built to make your brand impossible to ignore.">
+  <meta name="theme-color" content="#F7F7F6">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="WEBSIDEUP — Put Your Best Side Up">
+  <meta property="og:description"
+    content="Full-service digital creative agency, Delhi. Strategy, websites, content, social and performance.">
+  <meta property="og:url" content="https://www.websideup.com/">
+
+  <link rel="icon" type="image/png" href="assets/logos/logo-trimmed.png">
+
+  <!-- Editorial Typography: DM Sans + Manrope -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800;900&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="system.css">
+  <link rel="stylesheet" href="home.css">
+</head>
+
+<body>
+
+  <!-- Scroll Progress Indicator -->
+  <div id="scrollProgress" role="presentation" aria-hidden="true"></div>
+
+  <!-- Custom Contextual Cursor -->
+  <div id="cursor" aria-hidden="true"></div>
+
+  <!-- =========================================================================
+       GLOBAL NAVIGATION (SINGLE CONNECTED WEBSITE)
+  ========================================================================== -->
+  <header class="site-header" id="siteHeader">
+    <div class="nav-inner">
+      <a href="#hero" class="nav-logo" aria-label="WEBSIDEUP — Home">
+        <img src="assets/logos/logo.png" alt="WEBSIDEUP Logo" width="180" height="68">
+      </a>
+
+      <nav class="nav-links" aria-label="Primary Navigation">
+        <a href="#hero" class="nav-link active">HOME</a>
+        <a href="#services" class="nav-link">SERVICES</a>
+        <a href="#work" class="nav-link">WORK</a>
+        <a href="#contact" class="nav-link">CONTACT</a>
+      </nav>
+
+      <div class="nav-right">
+        <button id="themeToggle" class="theme-toggle" aria-label="Toggle Dark Mode">
+          <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+          <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18" style="display:none;"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+        </button>
+
+        <a href="https://www.instagram.com/websideup/" target="_blank" rel="noopener noreferrer" class="nav-cta"
+          id="navCta">
+          START A PROJECT <span aria-hidden="true">↗</span>
+        </a>
+
+        <button class="nav-toggle" id="navToggle" aria-label="Open navigation menu" aria-expanded="false"
+          aria-controls="mobileDrawer">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Navigation -->
+  <div class="mobile-drawer" id="mobileDrawer" aria-hidden="true">
+    <nav class="mobile-nav-links" aria-label="Mobile Navigation">
+      <a href="#hero" class="mobile-nav-link active">HOME</a>
+      <a href="#services" class="mobile-nav-link">SERVICES</a>
+      <a href="#work" class="mobile-nav-link">WORK</a>
+      <a href="#contact" class="mobile-nav-link">CONTACT</a>
+    </nav>
+    <div class="mobile-nav-meta">
+      <a href="https://www.instagram.com/websideup/" target="_blank" rel="noopener noreferrer"
+        class="mobile-nav-cta">START A PROJECT ↗</a>
+      <p class="type-meta" style="margin-top:1.5rem;color:var(--ink-dim)">Delhi NCR, India · 28.6139° N</p>
+      <a href="mailto:websideup@gmail.com" class="type-meta"
+        style="color:var(--ink-dim);margin-top:0.25rem">websideup@gmail.com</a>
+      <a href="tel:+919310150768" class="type-meta" style="color:var(--ink-dim);margin-top:0.25rem">+91-9310150768</a>
+    </div>
+  </div>
+
+  <main id="mainContent">
+
+    <!-- =========================================================================
+         01 — HERO SECTION
+    ========================================================================== -->
+    <section class="home-hero" id="hero" aria-labelledby="heroHeading">
+      <div class="container">
+
+        <div class="hero-grid">
+          <!-- Left Column: Agency Info & Big Headline & Action -->
+          <div class="hero-copy-col">
+            <!-- Agency Location & Studio Identity Badge -->
+            <div class="hero-agency-badge reveal-on-load" style="animation-delay:0.1s">
+              <span class="hero-status-pip" aria-hidden="true"></span>
+              <span class="hero-badge-text">
+                DELHI NCR, INDIA <span class="hero-badge-split">·</span> DIGITAL CREATIVE STUDIO
+              </span>
+            </div>
+
+            <!-- Monumental Bold Grotesk Headline -->
+            <div class="hero-title-wrap">
+              <h1 class="hero-headline reveal-on-load" id="heroHeading" style="animation-delay:0.22s">
+                <span class="title-row">PUT YOUR</span>
+                <span class="title-row">BEST SIDE <span class="accent-navy">UP.</span></span>
+              </h1>
+            </div>
+
+            <!-- Supporting Narrative & Direct CTAs -->
+            <div class="hero-statement-grid reveal-on-load" style="animation-delay:0.38s">
+              <p class="hero-lead-narrative">
+                We are a full-service creative agency based in Delhi. <span class="dim-text">We connect brand strategy,
+                  bespoke web engineering, motion production, and performance marketing to build brands that
+                  lead.</span>
+              </p>
+
+              <div class="hero-cta-group">
+                <a href="https://www.instagram.com/websideup/" target="_blank" rel="noopener noreferrer"
+                  class="btn-primary">
+                  Start a Project <span aria-hidden="true">↗</span>
+                </a>
+                <a href="#work" class="btn-secondary">
+                  Explore the Work <span aria-hidden="true">↘</span>
+                </a>
+              </div>
+            </div>
+
+            <!-- Sub-hero Tag / Features indicator -->
+            <div class="hero-mini-proof reveal-on-load" style="animation-delay:0.5s">
+              <span class="proof-dot" aria-hidden="true"></span>
+              <span>Strategy · High-Conversion Web Architecture · Organic &amp; Performance Growth</span>
+            </div>
+          </div>
+
+          <!-- Right Column: Hero Visual Showcase Frame -->
+          <div class="hero-visual-col reveal-on-load" style="animation-delay:0.3s">
+            <div class="hero-visual-wrap">
+              <div class="hero-visual-frame">
+                <img src="assets/images/ceo_websideup.jpg" alt="CEO of WEBSIDEUP - Digital Creative Studio"
+                  class="hero-visual-img" width="1024" height="1024" loading="eager" fetchpriority="high">
+                <div class="hero-visual-glass-overlay" aria-hidden="true"></div>
+              </div>
+
+              <!-- Floating Metric & Signal Badges -->
+              <div class="hero-float-card card-growth" aria-hidden="true">
+                <div class="float-card-icon">⚡</div>
+                <div class="float-card-content">
+                  <span class="float-card-value">+245%</span>
+                  <span class="float-card-label">Avg. Conversion Surge</span>
+                </div>
+              </div>
+
+              <div class="hero-float-card card-studio" aria-hidden="true">
+                <div class="float-card-badge">FOUNDER & CEO</div>
+                <div class="float-card-content">
+                  <span class="float-card-title">Leading WEBSIDEUP</span>
+                  <span class="float-card-sub">Vision · Strategy · Scale</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         CLIENT LOGO STRIPE (MINIMAL)
+    ========================================================================== -->
+    <section class="client-stripe-section" aria-label="Trusted Brands">
+      <div class="marquee-track">
+        <!-- Group 1 -->
+        <div class="marquee-group">
+          <img src="assets/logos/clients/client_1.png" alt="Client Logo" class="marquee-logo" loading="lazy">
+          <img src="assets/logos/clients/client_2.png" alt="Client Logo" class="marquee-logo" loading="lazy">
+          <img src="assets/logos/clients/client_3.png" alt="Client Logo" class="marquee-logo" loading="lazy">
+          <img src="assets/logos/clients/client_4.png" alt="Client Logo" class="marquee-logo" loading="lazy">
+          <img src="assets/logos/clients/client_5.png" alt="Client Logo" class="marquee-logo" loading="lazy">
+          <img src="assets/logos/clients/client_6.png" alt="Client Logo" class="marquee-logo" loading="lazy">
+          <img src="assets/logos/clients/client_7.png" alt="Client Logo" class="marquee-logo" loading="lazy">
+          <img src="assets/logos/clients/client_8.png" alt="Client Logo" class="marquee-logo" loading="lazy">
+          <img src="assets/logos/clients/client_9.png" alt="Client Logo" class="marquee-logo" loading="lazy">
+          <img src="assets/logos/clients/client_10.png" alt="Client Logo" class="marquee-logo" loading="lazy">
+          <img src="assets/logos/clients/client_11.png" alt="Client Logo" class="marquee-logo" loading="lazy">
+          <img src="assets/logos/clients/client_12.png" alt="Client Logo" class="marquee-logo" loading="lazy">
+        </div>
+        <!-- Group 2 (Duplicate for seamless infinite loop) -->
+        <div class="marquee-group" aria-hidden="true">
+          <img src="assets/logos/clients/client_1.png" alt="Client Logo" class="marquee-logo" loading="lazy">
+          <img src="assets/logos/clients/client_2.png" alt="Client Logo" class="marquee-logo" loading="lazy">
+          <img src="assets/logos/clients/client_3.png" alt="Client Logo" class="marquee-logo" loading="lazy">
+          <img src="assets/logos/clients/client_4.png" alt="Client Logo" class="marquee-logo" loading="lazy">
+          <img src="assets/logos/clients/client_5.png" alt="Client Logo" class="marquee-logo" loading="lazy">
+          <img src="assets/logos/clients/client_6.png" alt="Client Logo" class="marquee-logo" loading="lazy">
+          <img src="assets/logos/clients/client_7.png" alt="Client Logo" class="marquee-logo" loading="lazy">
+          <img src="assets/logos/clients/client_8.png" alt="Client Logo" class="marquee-logo" loading="lazy">
+          <img src="assets/logos/clients/client_9.png" alt="Client Logo" class="marquee-logo" loading="lazy">
+          <img src="assets/logos/clients/client_10.png" alt="Client Logo" class="marquee-logo" loading="lazy">
+          <img src="assets/logos/clients/client_11.png" alt="Client Logo" class="marquee-logo" loading="lazy">
+          <img src="assets/logos/clients/client_12.png" alt="Client Logo" class="marquee-logo" loading="lazy">
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         02 — SERVICES SECTION (7 CONNECTED DISCIPLINES)
+    ========================================================================== -->
+    <section class="home-services" id="services" aria-labelledby="servicesHeading">
+      <div class="container">
+
+        <div class="services-header">
+          <span class="eyebrow reveal">OUR CAPABILITIES</span>
+          <h2 class="type-headline reveal" id="servicesHeading" style="margin-top:0.5rem">
+            SEVEN DISCIPLINES.<br>
+            ONE CONNECTED <span class="accent-navy">SYSTEM.</span>
+          </h2>
+          <p class="disciplines-engine reveal">VIKSIT ENGINE</p>
+        </div>
+
+        <div class="services-split">
+
+          <!-- Left: Editorial Interactive Service Roster -->
+          <div class="services-left">
+            <ol class="editorial-service-list" id="servicesList" role="list">
+
+              <li class="service-nav-row is-active reveal" data-service="web">
+                <div class="service-nav-link">
+                  <span class="service-nav-num">01</span>
+                  <span class="service-nav-name">Web Design &amp; Development</span>
+                  <span class="service-nav-arrow" aria-hidden="true">↗</span>
+                </div>
+              </li>
+
+              <li class="service-nav-row reveal" data-service="seo">
+                <div class="service-nav-link">
+                  <span class="service-nav-num">02</span>
+                  <span class="service-nav-name">Search Engine Optimization</span>
+                  <span class="service-nav-arrow" aria-hidden="true">↗</span>
+                </div>
+              </li>
+
+              <li class="service-nav-row reveal" data-service="social">
+                <div class="service-nav-link">
+                  <span class="service-nav-num">03</span>
+                  <span class="service-nav-name">Social Media &amp; Reels</span>
+                  <span class="service-nav-arrow" aria-hidden="true">↗</span>
+                </div>
+              </li>
+
+              <li class="service-nav-row reveal" data-service="paid">
+                <div class="service-nav-link">
+                  <span class="service-nav-num">04</span>
+                  <span class="service-nav-name">Paid Advertising (Meta &amp; Google)</span>
+                  <span class="service-nav-arrow" aria-hidden="true">↗</span>
+                </div>
+              </li>
+
+              <li class="service-nav-row reveal" data-service="ppc">
+                <div class="service-nav-link">
+                  <span class="service-nav-num">05</span>
+                  <span class="service-nav-name">Pay-Per-Click Marketing (PPC)</span>
+                  <span class="service-nav-arrow" aria-hidden="true">↗</span>
+                </div>
+              </li>
+
+              <li class="service-nav-row reveal" data-service="email">
+                <div class="service-nav-link">
+                  <span class="service-nav-num">06</span>
+                  <span class="service-nav-name">Email Marketing &amp; Automation</span>
+                  <span class="service-nav-arrow" aria-hidden="true">↗</span>
+                </div>
+              </li>
+
+              <li class="service-nav-row reveal" data-service="content">
+                <div class="service-nav-link">
+                  <span class="service-nav-num">07</span>
+                  <span class="service-nav-name">Content Creation &amp; Production</span>
+                  <span class="service-nav-arrow" aria-hidden="true">↗</span>
+                </div>
+              </li>
+
+            </ol>
+          </div>
+
+          <!-- Right: Dynamic Context Panel -->
+          <div class="services-right">
+            <div class="services-context-panel reveal" id="servicePreviewCard">
+              <span class="preview-badge">01 · CORE ARCHITECTURE</span>
+              <h3 class="preview-title">Web Design &amp; Development</h3>
+              <p class="preview-desc">
+                High-performance digital flagship websites engineered for brand authority, fluid responsive motion, and
+                commercial conversions.
+              </p>
+              <p class="preview-deliverables-label">Scope &amp; Deliverables</p>
+              <ul class="preview-deliverables">
+                <li>Custom UI/UX Architecture</li>
+                <li>Responsive Web Engineering</li>
+                <li>Performance Optimization</li>
+                <li>Interaction &amp; Motion Systems</li>
+              </ul>
+              <a href="https://www.instagram.com/websideup/" target="_blank" rel="noopener noreferrer"
+                class="btn-secondary" style="width:100%;justify-content:center">
+                Start a Web Project ↗
+              </a>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Subtle Structural Ticker Strip -->
+        <div class="services-pillar-strip reveal">
+          <span class="pillar-item">STRATEGY</span>
+          <span class="pillar-dot" aria-hidden="true"></span>
+          <span class="pillar-item">CREATIVITY</span>
+          <span class="pillar-dot" aria-hidden="true"></span>
+          <span class="pillar-item">PERFORMANCE</span>
+          <span class="pillar-dot" aria-hidden="true"></span>
+          <span class="pillar-item">GROWTH</span>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         03 — WORK / VIDEO PORTFOLIO SECTION (Product Showcase & Selected Chapters)
+    ========================================================================== -->
+    <section class="home-work" id="work" aria-labelledby="workHeading">
+      <div class="container">
+
+
+        <!-- 03.2 — SELECTED PRODUCTION EDITORIAL SEQUENCE -->
+        <div class="selected-production-header reveal">
+          <div class="production-header-left">
+            <span class="eyebrow">SELECTED PRODUCTION</span>
+            <h3 class="type-headline" id="workHeading" style="margin-top:0.5rem">
+              PROOF OVER <span class="accent-navy">PROMISES.</span>
+            </h3>
+          </div>
+          <p class="production-header-desc">
+            Six focused disciplines. High-end motion direction, architectural walkthroughs, culinary storytelling, and
+            creator platforms.
+          </p>
+        </div>
+
+        <div class="work-stream">
+
+          <!-- CHAPTER 01: CREATOR REEL (Content Left / Video Right) -->
+          <article class="work-chapter chapter-right reveal" id="work-creator">
+            <div class="chapter-inner">
+              <div class="chapter-info">
+                <span class="chapter-badge">Chapter 01 · Motion &amp; Platform</span>
+                <h3 class="chapter-title">Creator Brand &amp; Personal Platform</h3>
+                <p class="chapter-desc">
+                  Empowering creators with owned audience ecosystems independent of algorithm changes — bespoke video
+                  production, motion reels, and brand identity.
+                </p>
+                <ul class="chapter-services">
+                  <li>Creator Reels</li>
+                  <li>Personal Branding</li>
+                  <li>Web Architecture</li>
+                </ul>
+              </div>
+              <div class="chapter-media">
+                <div class="video-card">
+                  <div class="media-box aspect-9-16">
+                    <video class="project-video" src="/videos/compressed-final/cretaor%20brand%20-web.mp4"
+                      poster="assets/posters/poster-05-influencer.jpg" autoplay muted loop playsinline
+                      preload="metadata"></video>
+                  </div>
+                  <span class="video-play-badge"><span class="play-icon">▶</span> Creator Reel</span>
+                  <span class="media-tag">01 · SOCIAL &amp; CREATOR</span>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- 03.1 — NEW FEATURED PRODUCT / COMMERCIAL SHOWCASE -->
+          <div class="product-featured-showcase" id="product-commercial"
+            style="margin-bottom: 0; padding-bottom: 0; border-bottom: none;">
+            <div class="product-featured-grid">
+
+              <!-- Left: Large Featured Product Video -->
+              <div class="product-media-col reveal">
+                <div class="product-video-card">
+                  <div class="media-box aspect-9-16">
+                    <video class="project-video" src="/videos/compressed-final/prdocut%20focus%20-web.mp4" autoplay
+                      muted loop playsinline preload="metadata"></video>
+                  </div>
+                  <span class="video-play-badge"><span class="play-icon">▶</span> Product Reel</span>
+                  <span class="media-tag">FEATURED · COMMERCIAL PRODUCTION</span>
+                </div>
+              </div>
+
+              <!-- Right: Editorial Narrative & Commercial Deliverables -->
+              <div class="product-info-col reveal">
+                <div class="product-category-badge">
+                  <span class="badge-dot" aria-hidden="true"></span>
+                  <span>PRODUCT / COMMERCIAL CONTENT</span>
+                </div>
+
+                <h2 class="product-headline">
+                  PRODUCTS, <br>
+                  MADE TO <br>
+                  <span class="accent-orange">STAND OUT.</span>
+                </h2>
+
+                <p class="product-lead-copy">
+                  We produce high-impact product cinematography and commercial reels engineered to captivate attention
+                  and accelerate purchasing decisions.
+                </p>
+
+                <div class="product-specs-grid">
+                  <div class="spec-item">
+                    <span class="spec-num">01</span>
+                    <span class="spec-title">Product Cinematography</span>
+                    <p class="spec-desc">Macro textures, controlled studio lighting, and high-fidelity product framing.
+                    </p>
+                  </div>
+                  <div class="spec-item">
+                    <span class="spec-num">02</span>
+                    <span class="spec-title">Commercial Short-Form</span>
+                    <p class="spec-desc">Optimized 9:16 vertical storytelling crafted for high-retention social feeds.
+                    </p>
+                  </div>
+                  <div class="spec-item">
+                    <span class="spec-num">03</span>
+                    <span class="spec-title">Brand Narrative</span>
+                    <p class="spec-desc">Connecting product aesthetics with brand prestige to drive conversion velocity.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="product-cta-group">
+                  <a href="https://www.instagram.com/websideup/" target="_blank" rel="noopener noreferrer"
+                    class="btn-primary">
+                    Commission Commercial Shoot <span aria-hidden="true">↗</span>
+                  </a>
+                  <span class="product-cta-note">Delivering bespoke studio production across Delhi NCR &amp;
+                    worldwide.</span>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+
+          <!-- CHAPTER 02: REAL ESTATE (Content Left / Video Right) -->
+          <article class="work-chapter chapter-right reveal" id="work-realestate">
+            <div class="chapter-inner">
+              <div class="chapter-info">
+                <span class="chapter-badge">Chapter 02 · Architectural Motion</span>
+                <h3 class="chapter-title">Luxury Real Estate Architecture</h3>
+                <p class="chapter-desc">
+                  End-to-end digital launch strategy for a premium property development — from architectural video
+                  walkthroughs to high-performance web engineering.
+                </p>
+                <ul class="chapter-services">
+                  <li>Video Walkthroughs</li>
+                  <li>Web Architecture</li>
+                  <li>Paid Advertising</li>
+                  <li>SEO</li>
+                </ul>
+              </div>
+              <div class="chapter-media">
+                <div class="video-card">
+                  <div class="media-box aspect-9-16">
+                    <video class="project-video" src="/videos/compressed-final/real%20estate%20-web.mp4"
+                      poster="assets/posters/poster-02-realestate.jpg" autoplay muted loop playsinline
+                      preload="metadata"></video>
+                  </div>
+                  <span class="video-play-badge"><span class="play-icon">▶</span> Walkthrough Reel</span>
+                  <span class="media-tag">02 · REAL ESTATE</span>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- CHAPTER 03: NEW CAFE REEL (Video Left / Content Right) -->
+          <article class="work-chapter chapter-left reveal" id="work-cafe">
+            <div class="chapter-inner">
+              <div class="chapter-media">
+                <div class="video-card">
+                  <div class="media-box aspect-9-16">
+                    <video class="project-video" src="/videos/compressed-final/cafe%20-web.mp4"
+                      poster="assets/posters/poster-03-cafe.jpg" autoplay muted loop playsinline
+                      preload="metadata"></video>
+                  </div>
+                  <span class="video-play-badge"><span class="play-icon">▶</span> Hospitality Reel</span>
+                  <span class="media-tag">03 · CAFE &amp; DINING</span>
+                </div>
+              </div>
+              <div class="chapter-info">
+                <span class="chapter-badge">Chapter 03 · Culinary Identity</span>
+                <h3 class="chapter-title">Artisanal Cafe &amp; Dining</h3>
+                <p class="chapter-desc">
+                  Atmospheric digital storytelling and appetizing motion content for an artisanal culinary brand
+                  expanding its regional footprint.
+                </p>
+                <ul class="chapter-services">
+                  <li>F&amp;B Motion Shoots</li>
+                  <li>Social Content</li>
+                  <li>Web Design</li>
+                </ul>
+              </div>
+            </div>
+          </article>
+
+          <!-- CHAPTER 04: LIGHTING BRAND (Content Left / Video Right) -->
+          <article class="work-chapter chapter-right reveal" id="work-lighting">
+            <div class="chapter-inner">
+              <div class="chapter-info">
+                <span class="chapter-badge">Chapter 04 · Product Motion</span>
+                <h3 class="chapter-title">Designer Lighting Brand</h3>
+                <p class="chapter-desc">
+                  Growth strategy and product motion for an architectural lighting studio — precision search marketing,
+                  PPC, and e-commerce engineering.
+                </p>
+                <ul class="chapter-services">
+                  <li>Product Motion</li>
+                  <li>E-Commerce Engineering</li>
+                  <li>Google PPC</li>
+                  <li>SEO</li>
+                </ul>
+              </div>
+              <div class="chapter-media">
+                <div class="video-card">
+                  <div class="media-box aspect-9-16">
+                    <video class="project-video" src="/videos/compressed-final/lighting-web.mp4"
+                      poster="assets/posters/poster-04-lighting.jpg" autoplay muted loop playsinline
+                      preload="metadata"></video>
+                  </div>
+                  <span class="video-play-badge"><span class="play-icon">▶</span> Product Reel</span>
+                  <span class="media-tag">04 · LIGHTING BRAND</span>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- CHAPTER 05: INTERIOR DESIGN (Video Left / Content Right) -->
+          <article class="work-chapter chapter-left reveal" id="work-interior">
+            <div class="chapter-inner">
+              <div class="chapter-media">
+                <div class="video-card">
+                  <div class="media-box aspect-9-16">
+                    <video class="project-video" src="/videos/compressed-final/interiror%20desgn-web.mp4"
+                      poster="assets/posters/poster-01-social.jpg" autoplay muted loop playsinline
+                      preload="metadata"></video>
+                  </div>
+                  <span class="video-play-badge"><span class="play-icon">▶</span> Spatial Reel</span>
+                  <span class="media-tag">05 · INTERIOR DESIGN</span>
+                </div>
+              </div>
+              <div class="chapter-info">
+                <span class="chapter-badge">Chapter 05 · Spatial Atmosphere</span>
+                <h3 class="chapter-title">Interior Design &amp; Living Spaces</h3>
+                <p class="chapter-desc">
+                  Spatial motion storytelling and brand presence for an interior design studio crafting bespoke
+                  residential and commercial environments.
+                </p>
+                <ul class="chapter-services">
+                  <li>Interior Reels</li>
+                  <li>Visual Identity</li>
+                  <li>Content Strategy</li>
+                </ul>
+              </div>
+            </div>
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         04 — CTA / CONTACT SECTION (Minimal Direct Experience)
+    ========================================================================== -->
+    <section class="home-contact" id="contact" aria-labelledby="contactHeading">
+      <div class="container">
+
+        <div class="contact-direct-card reveal">
+          <span class="eyebrow">START A PROJECT</span>
+          <h2 class="contact-title" id="contactHeading">
+            READY TO PUT<br>
+            YOUR BEST <span class="accent-navy">SIDE UP?</span>
+          </h2>
+          <p class="contact-desc">
+            We work with founders, brands, and creators who care about high aesthetics, engineering speed, and real
+            commercial growth. Connect directly with our studio leadership.
+          </p>
+
+          <div style="display:flex;gap:1.1rem;flex-wrap:wrap;align-items:center;margin-top:0.25rem">
+            <a href="https://www.instagram.com/websideup/" target="_blank" rel="noopener noreferrer" class="btn-primary"
+              style="font-size:0.938rem;padding:15px 32px">
+              FOLLOW / CONNECT WITH WEBSIDEUP <span aria-hidden="true">↗</span>
+            </a>
+            <a href="tel:+919310150768" class="btn-secondary" style="font-size:0.938rem;padding:14px 28px">
+              +91-9310150768
+            </a>
+          </div>
+
+          <div class="contact-direct-links">
+            <a href="mailto:websideup@gmail.com" class="contact-direct-link">websideup@gmail.com</a>
+            <p class="type-meta" style="color:var(--ink-dim)">Delhi NCR, India · 28.6139° N, 77.2090° E</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- =========================================================================
+       SITE FOOTER (Midnight Ink Minimal Footer)
+  ========================================================================== -->
+  <footer class="site-footer" id="footer">
+    <div class="container">
+      <div class="footer-grid">
+
+        <div class="footer-brand-col">
+          <img src="assets/logos/logo-light.png" alt="WEBSIDEUP" class="footer-brand-mark" width="140" height="52">
+          <p class="footer-tagline">
+            Full-service digital creative agency based in Delhi, India.<br>
+            Built to look good. Built to work.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <p class="footer-col-label">Navigation</p>
+          <a href="#hero">Home</a>
+          <a href="#services">Services</a>
+          <a href="#work">Work &amp; Videos</a>
+          <a href="#contact">Contact</a>
+        </div>
+
+        <div class="footer-col">
+          <p class="footer-col-label">Direct Connect</p>
+          <a href="https://www.instagram.com/websideup/" target="_blank" rel="noopener noreferrer">Instagram ↗</a>
+          <a href="mailto:websideup@gmail.com">websideup@gmail.com</a>
+          <a href="tel:+919310150768">+91-9310150768</a>
+        </div>
+
+        <div class="footer-col">
+          <p class="footer-col-label">Studio Location</p>
+          <p style="color:#ffffff">Delhi NCR, India</p>
+          <p class="type-meta" style="color:#70849e;margin-top:0.25rem">Anand Vihar, Delhi-110092</p>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <p class="footer-copy">© 2026 WEBSIDEUP. All rights reserved.</p>
+        <a href="#siteHeader" class="footer-back-top">Back to top ↑</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="site.js"></script>
+</body>
+
+</html>

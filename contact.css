@@ -1,0 +1,172 @@
+/* ==========================================================================
+   WEBSIDEUP — CONTACT PAGE (MINIMAL DIRECT CTA EXPERIENCE)
+   Matched with reference: https://limegreen-meerkat-589941.hostingersite.com/
+   Paper Background (#f7f7f6) + Deep Midnight Ink (#081522) + Vibrant Orange (#ff6b2c)
+   ========================================================================== */
+
+.contact-hero {
+  padding-top: calc(var(--header-h) + 3.5rem);
+  padding-bottom: clamp(3.5rem, 6vw, 5rem);
+  background: var(--paper);
+}
+
+.contact-main-title {
+  font-family: var(--f-display);
+  font-size: clamp(3rem, 7vw, 6.5rem);
+  font-weight: 800;
+  line-height: 0.98;
+  letter-spacing: -2.5px;
+  color: var(--ink);
+  margin: 1.25rem 0 1.5rem;
+}
+
+.contact-main-title em,
+.contact-main-title .accent {
+  color: var(--orange);
+  font-style: normal;
+}
+
+.contact-lead-desc {
+  font-size: clamp(1.05rem, 1.4vw, 1.25rem);
+  line-height: 1.68;
+  color: var(--c-muted);
+  max-width: 52ch;
+}
+
+/* Contact Details & Direct Connect Grid */
+.contact-experience-section {
+  padding: clamp(3rem, 6vw, 5.5rem) 0 clamp(5rem, 8vw, 8rem);
+  background: #ffffff;
+}
+
+.contact-direct-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+  gap: clamp(2.5rem, 5vw, 6rem);
+  align-items: start;
+}
+
+/* Connect Card */
+.contact-cta-card {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  padding: clamp(2rem, 4.5vw, 3.5rem);
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+  box-shadow: var(--shadow);
+}
+
+.contact-cta-card-title {
+  font-family: var(--f-display);
+  font-size: clamp(1.6rem, 2.8vw, 2.4rem);
+  font-weight: 800;
+  letter-spacing: -1px;
+  color: var(--ink);
+  line-height: 1.15;
+}
+
+.contact-cta-card-desc {
+  font-size: clamp(1rem, 1.2vw, 1.125rem);
+  line-height: 1.68;
+  color: var(--c-muted);
+}
+
+.contact-action-btn-group {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+
+.instagram-direct-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 14px 28px;
+  background: var(--orange);
+  color: #ffffff;
+  font-family: var(--f-sans);
+  font-size: 0.938rem;
+  font-weight: 700;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  box-shadow: 0 10px 30px rgba(255, 107, 44, 0.25);
+  transition: transform 0.25s var(--ease-out), box-shadow 0.25s ease, background 0.2s ease;
+  text-align: center;
+}
+
+.instagram-direct-btn:hover {
+  transform: translateY(-3px);
+  background: var(--orange2);
+  box-shadow: 0 15px 35px rgba(255, 107, 44, 0.35);
+}
+
+/* Info Column */
+.contact-info-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.contact-info-block {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding-bottom: 1.75rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.contact-info-block:last-child {
+  border-bottom: none;
+}
+
+.info-block-label {
+  font-family: var(--f-display);
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--orange);
+}
+
+.info-block-value {
+  font-family: var(--f-display);
+  font-size: clamp(1.25rem, 2vw, 1.75rem);
+  font-weight: 700;
+  color: var(--ink);
+  transition: color 0.2s ease;
+}
+
+a.info-block-value:hover {
+  color: var(--orange);
+}
+
+.info-block-sub {
+  font-size: 0.938rem;
+  color: var(--c-muted);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .contact-direct-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 2.5rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .contact-hero {
+    padding-top: calc(var(--header-h) + 2rem);
+  }
+
+  .contact-cta-card {
+    padding: 2rem 1.5rem;
+  }
+
+  .instagram-direct-btn {
+    width: 100%;
+  }
+}

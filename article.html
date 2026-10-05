@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>The Foundation of High-Performance Web Architecture — WebsideUp Insights</title>
+  <meta name="description" content="Why your brand needs a digital ecosystem built for speed, scalability, and seamless user journeys. By WebsideUp.">
+  <meta name="theme-color" content="#080B11">
+  <link rel="icon" type="image/png" href="assets/logos/logo-trimmed.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@1&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="system.css">
+  <link rel="stylesheet" href="inner-pages.css">
+  <style>
+    .article-wrap {
+      max-width: 760px;
+      margin: 0 auto;
+    }
+    .article-header {
+      padding-top: calc(var(--header-h) + 4rem);
+      margin-bottom: 3rem;
+    }
+    .article-meta-top {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+    .article-tag {
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--c-orange);
+    }
+    .article-date-top {
+      font-size: 0.72rem;
+      color: var(--c-dim);
+      letter-spacing: 0.08em;
+    }
+    .article-headline {
+      font-size: clamp(2.2rem, 5vw, 3.8rem);
+      font-weight: 800;
+      line-height: 1.05;
+      letter-spacing: -0.03em;
+      color: var(--c-white);
+      margin-bottom: 2rem;
+    }
+    .article-featured-img {
+      width: 100%;
+      border-radius: 4px;
+      border: 1px solid var(--c-border);
+      margin-bottom: 3.5rem;
+      display: block;
+    }
+    .article-body-content {
+      font-size: clamp(1rem, 1.3vw, 1.15rem);
+      line-height: 1.8;
+      color: var(--c-high);
+    }
+    .article-body-content p {
+      margin-bottom: 1.8rem;
+    }
+    .article-body-content h2 {
+      font-size: clamp(1.4rem, 2.5vw, 2rem);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      color: var(--c-white);
+      margin: 3rem 0 1.2rem;
+    }
+    .article-body-content blockquote {
+      border-left: 2px solid var(--c-orange);
+      padding-left: 1.5rem;
+      margin: 2.5rem 0;
+      font-family: var(--font-serif);
+      font-style: italic;
+      font-size: clamp(1.3rem, 2.2vw, 1.7rem);
+      line-height: 1.4;
+      color: var(--c-white);
+    }
+    .article-body-content ul {
+      list-style: disc;
+      padding-left: 1.5rem;
+      margin-bottom: 2rem;
+    }
+    .article-body-content li {
+      margin-bottom: 0.75rem;
+      color: var(--c-muted);
+    }
+    .article-body-content li strong {
+      color: var(--c-white);
+    }
+    .article-nav-back {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--c-muted);
+      margin-top: 3rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--c-border);
+      width: 100%;
+      transition: color 0.2s ease;
+    }
+    .article-nav-back:hover {
+      color: var(--c-orange);
+    }
+  </style>
+</head>
+<body>
+
+  <div id="scrollProgress" role="presentation" aria-hidden="true"></div>
+  <div id="cursor" aria-hidden="true"></div>
+
+  <header class="site-header" id="siteHeader">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo" aria-label="WebsideUp — Home">
+        <img src="assets/logos/logo-light.png" alt="WebsideUp" width="120" height="68">
+      </a>
+      <nav class="nav-links" aria-label="Primary Navigation">
+        <a href="work.html" class="nav-link">Work</a>
+        <a href="services.html" class="nav-link">Services</a>
+        <a href="process.html" class="nav-link">Process</a>
+        <a href="about.html" class="nav-link">About</a>
+      </nav>
+      <div class="nav-right">
+                <button id="themeToggle" class="theme-toggle" aria-label="Toggle Dark Mode">
+          <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+          <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18" style="display:none;"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+        </button>
+        <a href="contact.html" class="nav-cta" id="navCta">Start a Project <span aria-hidden="true">↗</span></a>
+        <button class="nav-toggle" id="navToggle" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobileDrawer">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <div class="mobile-drawer" id="mobileDrawer" aria-hidden="true">
+    <nav class="mobile-nav-links" aria-label="Mobile Navigation">
+      <a href="work.html" class="mobile-nav-link">Work</a>
+      <a href="services.html" class="mobile-nav-link">Services</a>
+      <a href="process.html" class="mobile-nav-link">Process</a>
+      <a href="about.html" class="mobile-nav-link">About</a>
+    </nav>
+    <div class="mobile-nav-meta">
+      <a href="contact.html" class="mobile-nav-cta">Start a Project ↗</a>
+    </div>
+  </div>
+
+  <main>
+    <article class="section" aria-labelledby="articleMainTitle">
+      <div class="container">
+        <div class="article-wrap">
+          
+          <header class="article-header">
+            <div class="article-meta-top reveal-on-load" style="animation-delay:0.1s">
+              <span class="article-tag">Web Architecture</span>
+              <span class="article-date-top">• Editorial Perspectives</span>
+            </div>
+            <h1 class="article-headline reveal-on-load" id="articleMainTitle" style="animation-delay:0.25s">
+              The Foundation of High-Performance <span class="serif accent">Web Architecture.</span>
+            </h1>
+          </header>
+
+          <img src="assets/posters/poster-01-social.jpg" alt="Web Architecture Concept" class="article-featured-img reveal-on-load" style="animation-delay:0.35s">
+
+          <div class="article-body-content reveal">
+            <p>
+              In an era where digital audiences make decisions within milliseconds, a brand’s digital architecture is the silent ambassador of its capability. A beautiful interface rendered poorly or slowly is immediately discounted by the user.
+            </p>
+
+            <h2>The Real Cost of Latency</h2>
+            <p>
+              Performance is not a technical afterthought — it is a primary conversion vector. Modern users expect fluid, responsive, zero-delay interactions. When page rendering stalls or layouts shift during interaction, credibility drops before the message is even read.
+            </p>
+
+            <blockquote>
+              "A digital experience should feel as intentional, solid, and frictionless as a physical product in your hands."
+            </blockquote>
+
+            <h2>Built for Speed and Scalability</h2>
+            <p>
+              At WebsideUp, every website is engineered around foundational web standards: clean semantic HTML, modular CSS tokens, and lightweight, purpose-driven JavaScript. This eliminates bloated dependency chains and ensures that your brand’s site remains lightning fast across any device and connection speed.
+            </p>
+
+            <h2>Key Engineering Principles</h2>
+            <ul>
+              <li><strong>Zero Unnecessary Overhead:</strong> No heavyweight frameworks when clean vanilla web technology delivers better speed and longevity.</li>
+              <li><strong>Fluid Typography &amp; Rhythm:</strong> Consistent layout hierarchy that scales proportionally from compact mobile viewports to widescreen displays.</li>
+              <li><strong>Accessibility by Default:</strong> High contrast, keyboard navigable, and built to semantic standards.</li>
+            </ul>
+
+            <p>
+              When your digital side is built with precision, it works for you around the clock — turning passive visitors into active inquiries.
+            </p>
+
+            <a href="insights.html" class="article-nav-back">← Back to all insights</a>
+          </div>
+
+        </div>
+      </div>
+    </article>
+
+    <hr class="hr-thin">
+
+    <!-- OUTRO CTA -->
+    <section class="section" aria-labelledby="articleCtaHeading">
+      <div class="container">
+        <div class="page-outro reveal">
+          <h2 class="type-headline page-outro-title" id="articleCtaHeading">
+            Ready to upgrade your<br>brand’s <span class="serif accent">digital side?</span>
+          </h2>
+          <div class="page-outro-actions">
+            <a href="contact.html" class="btn-primary">Start a Project ↗</a>
+            <a href="work.html" class="btn-arrow" style="margin-top:0.5rem">See the Work <span class="arrow" aria-hidden="true">↗</span></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand-col">
+          <img src="assets/logos/logo-light.png" alt="WebsideUp" class="footer-brand-mark" width="100">
+          <p class="footer-tagline">Built to look good. Built to work.</p>
+        </div>
+        <div class="footer-col">
+          <p class="footer-col-label">Navigate</p>
+          <a href="work.html">Work</a>
+          <a href="services.html">Services</a>
+          <a href="process.html">Process</a>
+          <a href="about.html">About</a>
+          <a href="contact.html">Contact</a>
+        </div>
+        <div class="footer-col">
+          <p class="footer-col-label">Contact</p>
+          <a href="mailto:websideup@gmail.com">websideup@gmail.com</a>
+          <a href="tel:+919310150768">+91-9310150768</a>
+        </div>
+        <div class="footer-col">
+          <p class="footer-col-label">Location</p>
+          <p>Delhi, India</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-copy">© 2024 WebsideUp. All rights reserved.</p>
+        <a href="#" class="footer-back-top" id="backToTop">Back to top ↑</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="site.js"></script>
+</body>
+</html>

@@ -1,0 +1,446 @@
+/* ==============================================
+   PROCESS PAGE STYLES
+   ============================================== */
+.process-body {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  overflow-x: hidden;
+}
+
+/* ==============================================
+   PROCESS INTRO
+   ============================================== */
+.process-intro {
+  padding: calc(var(--nav-height) + var(--space-3xl)) var(--space-lg) var(--space-3xl);
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 10;
+}
+
+.process-intro-container {
+  max-width: var(--max-width-lg);
+  width: 100%;
+  text-align: center;
+}
+
+.process-eyebrow {
+  margin-bottom: var(--space-xl);
+}
+
+.process-eyebrow .eyebrow-text {
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  letter-spacing: 0.1em;
+  color: var(--color-orange);
+  text-transform: uppercase;
+}
+
+.process-main-title {
+  font-family: var(--font-sans);
+  font-size: clamp(3rem, 8vw, 7rem);
+  line-height: 0.95;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  margin-bottom: var(--space-2xl);
+  text-transform: uppercase;
+}
+
+.process-main-title .title-line {
+  display: block;
+}
+
+.process-lead-text {
+  font-family: var(--font-sans);
+  font-size: clamp(1.25rem, 2vw, 1.75rem);
+  line-height: 1.4;
+  color: var(--color-text-muted);
+  max-width: 800px;
+  margin: 0 auto var(--space-3xl);
+  font-weight: 300;
+}
+
+.process-formula {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-md);
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  color: var(--color-text);
+  letter-spacing: 0.05em;
+  padding-top: var(--space-xl);
+  border-top: 1px solid var(--color-border);
+}
+
+.formula-term {
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--color-border-subtle);
+  border-radius: 100px;
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.formula-operator {
+  color: var(--color-orange);
+}
+
+/* ==============================================
+   SCROLL SYSTEM - DESKTOP
+   ============================================== */
+@media (min-width: 992px) {
+  .process-scroll-container {
+    position: relative;
+    padding: 0 var(--space-lg);
+    max-width: 1600px;
+    margin: 0 auto;
+  }
+
+  .process-sticky-wrapper {
+    display: flex;
+    position: relative;
+    align-items: flex-start;
+  }
+
+  .process-left {
+    width: 50%;
+    padding-right: var(--space-3xl);
+    padding-top: 20vh;
+    padding-bottom: 50vh; /* Allow scrolling past the last element */
+  }
+
+  .process-right {
+    width: 50%;
+    position: sticky;
+    top: 20vh;
+    height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+
+  .process-step {
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    opacity: 0.2;
+    transition: opacity 0.5s var(--easing-standard);
+  }
+
+  .process-step.is-active {
+    opacity: 1;
+  }
+
+  .step-number {
+    font-family: var(--font-serif);
+    font-size: 8rem;
+    line-height: 1;
+    color: var(--color-orange);
+    margin-bottom: var(--space-sm);
+    font-style: italic;
+    font-weight: 300;
+  }
+
+  .step-title {
+    font-family: var(--font-sans);
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: var(--space-md);
+    letter-spacing: -0.02em;
+  }
+
+  .step-desc {
+    font-size: 1.25rem;
+    line-height: 1.5;
+    color: var(--color-text-muted);
+    max-width: 400px;
+  }
+}
+
+/* ==============================================
+   VISUALS & PROGRESS - DESKTOP
+   ============================================== */
+.process-visuals-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  max-width: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.progress-track {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: var(--color-border);
+}
+
+.progress-fill {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: var(--color-orange);
+  height: 0%; /* updated via JS */
+  transition: height 0.3s linear;
+}
+
+.visual-canvas {
+  position: relative;
+  width: 400px;
+  height: 400px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--color-border-subtle);
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.visual-state {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.8s var(--easing-standard), visibility 0.8s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.visual-canvas[data-active-state="1"] .state-1,
+.visual-canvas[data-active-state="2"] .state-2,
+.visual-canvas[data-active-state="3"] .state-3,
+.visual-canvas[data-active-state="4"] .state-4,
+.visual-canvas[data-active-state="5"] .state-5 {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* STATE 1: DISCOVER (Fragments coming together) */
+.state-1 .fragment {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  border: 1px solid var(--color-orange);
+  transition: transform 1s var(--easing-standard);
+  transform: translate(var(--tx, 0), var(--ty, 0)) rotate(var(--r, 0deg));
+}
+
+.state-1 .f1 { --tx: -100px; --ty: -100px; --r: 45deg; }
+.state-1 .f2 { --tx: 100px; --ty: -100px; --r: -30deg; }
+.state-1 .f3 { --tx: -100px; --ty: 100px; --r: 15deg; }
+.state-1 .f4 { --tx: 100px; --ty: 100px; --r: -60deg; }
+
+.visual-canvas[data-active-state="1"] .state-1 .fragment {
+  transform: translate(0, 0) rotate(0deg);
+}
+
+/* STATE 2: STRATEGY (Lines connect) */
+.state-2 .node {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  background: var(--color-text);
+  border-radius: 50%;
+  transition: transform 1s var(--easing-standard), background 1s;
+}
+
+.state-2 .n1 { top: 30%; left: 30%; }
+.state-2 .n2 { top: 70%; left: 50%; }
+.state-2 .n3 { top: 40%; left: 70%; }
+
+.state-2 .line {
+  position: absolute;
+  height: 1px;
+  background: var(--color-orange);
+  transform-origin: left center;
+  transform: scaleX(0);
+  transition: transform 1s var(--easing-standard) 0.3s;
+}
+
+.state-2 .l1 { top: 30%; left: 30%; width: 100px; rotate: 60deg; }
+.state-2 .l2 { top: 70%; left: 50%; width: 90px; rotate: -45deg; }
+
+.visual-canvas[data-active-state="2"] .state-2 .line {
+  transform: scaleX(1);
+}
+.visual-canvas[data-active-state="2"] .state-2 .node {
+  background: var(--color-orange);
+}
+
+/* STATE 3: CREATE (Blocks form composition) */
+.state-3 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 10px;
+  padding: 40px;
+}
+.state-3 .block {
+  background: var(--color-border);
+  border-radius: 8px;
+  transform: scale(0);
+  transition: transform 0.8s var(--easing-standard), background 0.8s;
+}
+.state-3 .b1 { grid-column: 1 / 3; }
+.state-3 .b2 { grid-column: 1 / 2; }
+.state-3 .b3 { grid-column: 2 / 3; }
+
+.visual-canvas[data-active-state="3"] .state-3 .block {
+  transform: scale(1);
+}
+.visual-canvas[data-active-state="3"] .state-3 .b2 { transition-delay: 0.1s; background: var(--color-orange); }
+.visual-canvas[data-active-state="3"] .state-3 .b3 { transition-delay: 0.2s; }
+
+/* STATE 4: LAUNCH (System expands) */
+.state-4 .core-dot {
+  width: 20px;
+  height: 20px;
+  background: var(--color-orange);
+  border-radius: 50%;
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+}
+.state-4 .pulse-ring {
+  position: absolute;
+  top: 50%; left: 50%;
+  border: 1px solid var(--color-orange);
+  border-radius: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  opacity: 0;
+  transition: transform 1.5s var(--easing-standard), opacity 1.5s;
+}
+.state-4 .pr1 { width: 100px; height: 100px; }
+.state-4 .pr2 { width: 200px; height: 200px; }
+.state-4 .pr3 { width: 300px; height: 300px; }
+
+.visual-canvas[data-active-state="4"] .state-4 .pulse-ring {
+  transform: translate(-50%, -50%) scale(1);
+  opacity: 0.5;
+}
+.visual-canvas[data-active-state="4"] .state-4 .pr2 { transition-delay: 0.1s; opacity: 0.3; }
+.visual-canvas[data-active-state="4"] .state-4 .pr3 { transition-delay: 0.2s; opacity: 0.1; }
+
+/* STATE 5: OPTIMISE (System cycles) */
+.state-5 .cycle-ring {
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  border: 1px dashed var(--color-text-muted);
+  border-radius: 50%;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+}
+.state-5 .cycle-dot {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  background: var(--color-orange);
+  border-radius: 50%;
+  top: 50%; left: 50%;
+  margin-top: -6px; margin-left: -6px;
+}
+
+@keyframes spin { 100% { transform: translate(-50%, -50%) rotate(360deg); } }
+@keyframes orbit1 { 0% { transform: rotate(0deg) translateX(75px) rotate(0deg); } 100% { transform: rotate(360deg) translateX(75px) rotate(-360deg); } }
+@keyframes orbit2 { 0% { transform: rotate(180deg) translateX(75px) rotate(-180deg); } 100% { transform: rotate(540deg) translateX(75px) rotate(-540deg); } }
+
+.visual-canvas[data-active-state="5"] .state-5 .cycle-ring {
+  animation: spin 10s linear infinite;
+  border-color: var(--color-orange);
+}
+.visual-canvas[data-active-state="5"] .state-5 .cd1 { animation: orbit1 3s linear infinite; }
+.visual-canvas[data-active-state="5"] .state-5 .cd2 { animation: orbit2 3s linear infinite; }
+
+
+/* ==============================================
+   MOBILE SCROLL (Vertical Timeline)
+   ============================================== */
+@media (max-width: 991px) {
+  .process-scroll-container {
+    padding: var(--space-2xl) var(--space-md);
+  }
+
+  .process-right {
+    display: none; /* Hide complex sticky visuals on mobile */
+  }
+
+  .process-steps {
+    position: relative;
+    padding-left: 20px;
+    border-left: 1px solid var(--color-border);
+  }
+
+  .process-step {
+    padding-bottom: var(--space-3xl);
+    position: relative;
+  }
+
+  .process-step::before {
+    content: '';
+    position: absolute;
+    left: -24px;
+    top: 20px;
+    width: 9px;
+    height: 9px;
+    background: var(--color-bg);
+    border: 2px solid var(--color-orange);
+    border-radius: 50%;
+  }
+
+  .step-number {
+    font-family: var(--font-serif);
+    font-size: 3rem;
+    color: var(--color-orange);
+    margin-bottom: var(--space-xs);
+    font-style: italic;
+  }
+
+  .step-title {
+    font-size: 1.75rem;
+    margin-bottom: var(--space-sm);
+  }
+
+  .step-desc {
+    color: var(--color-text-muted);
+    line-height: 1.5;
+  }
+}
+
+/* ==============================================
+   OUTRO CTA
+   ============================================== */
+.process-outro {
+  padding: var(--space-4xl) var(--space-lg);
+  text-align: center;
+  border-top: 1px solid var(--color-border);
+  background: var(--color-bg-alt);
+}
+
+.outro-content {
+  max-width: var(--max-width-md);
+  margin: 0 auto;
+}
+
+.outro-title {
+  font-family: var(--font-sans);
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  line-height: 0.95;
+  font-weight: 800;
+  margin-bottom: var(--space-md);
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+}
+
+.outro-desc {
+  font-size: clamp(1.25rem, 2vw, 1.5rem);
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-2xl);
+}

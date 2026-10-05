@@ -1,0 +1,203 @@
+/* ==========================================================================
+   WEBSIDEUP — SERVICES PAGE
+   Matched with reference: https://limegreen-meerkat-589941.hostingersite.com/
+   Paper Background (#f7f7f6) + Deep Midnight Ink (#081522) + Vibrant Orange (#ff6b2c)
+   ========================================================================== */
+
+/* Page hero */
+.services-hero {
+  padding-top: calc(var(--header-h) + 3.5rem);
+  padding-bottom: clamp(3.5rem, 6vw, 5rem);
+  background: var(--paper);
+}
+
+.services-hero-title {
+  margin: 1.25rem 0 1.5rem;
+  max-width: 22ch;
+  color: var(--ink);
+}
+
+.services-hero-title em {
+  color: var(--orange);
+  font-style: normal;
+}
+
+.services-hero-desc {
+  max-width: 54ch;
+  font-size: clamp(1.05rem, 1.4vw, 1.25rem);
+  line-height: 1.68;
+  color: var(--c-muted);
+}
+
+/* Quick Jump Navigation */
+.services-quick-nav {
+  margin-top: 2.5rem;
+}
+
+.quick-nav-pills {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.quick-nav-pills .btn-secondary {
+  font-size: 0.813rem;
+  padding: 8px 18px;
+  border-color: var(--line);
+  color: var(--ink);
+  background: #ffffff;
+}
+
+.quick-nav-pills .btn-secondary:hover {
+  border-color: var(--orange);
+  color: var(--orange);
+}
+
+/* Service entries */
+.services-section {
+  padding: 0 0 clamp(4rem, 8vw, 7rem);
+  background: #ffffff;
+}
+
+.service-entry {
+  padding: clamp(3.5rem, 6vw, 5.5rem) 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.service-entry:last-of-type {
+  border-bottom: none;
+}
+
+.service-entry-inner {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.6fr);
+  gap: clamp(2.5rem, 5vw, 6rem);
+  align-items: start;
+}
+
+.service-entry-head {
+  position: sticky;
+  top: calc(var(--header-h) + 2.5rem);
+}
+
+.service-entry-num {
+  display: block;
+  font-family: var(--f-display);
+  font-size: 0.813rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  color: var(--orange);
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+}
+
+.service-entry-title {
+  font-family: var(--f-display);
+  font-size: clamp(1.8rem, 3.2vw, 3rem);
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -1px;
+  color: var(--ink);
+}
+
+.service-entry-body {
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+}
+
+.service-entry-body .type-body {
+  font-size: clamp(1.02rem, 1.3vw, 1.15rem);
+  line-height: 1.7;
+  color: var(--c-muted);
+}
+
+/* Deliverables list */
+.deliverables-heading {
+  font-family: var(--f-display);
+  font-size: 0.813rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink);
+  margin-top: 0.5rem;
+}
+
+.service-deliverables {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 0.75rem 2rem;
+  padding: 0;
+}
+
+.service-deliverables li {
+  font-size: 0.938rem;
+  color: var(--ink);
+  padding: 0.6rem 0;
+  border-bottom: 1px solid var(--line);
+  position: relative;
+  padding-left: 1.25rem;
+}
+
+.service-deliverables li::before {
+  content: '—';
+  position: absolute;
+  left: 0;
+  color: var(--orange);
+  font-weight: 800;
+}
+
+/* CTA strip */
+.services-cta-strip {
+  padding: clamp(4rem, 7vw, 6rem) 0;
+  background: var(--paper);
+  border-top: 1px solid var(--line);
+}
+
+.services-cta-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.services-cta-title {
+  font-family: var(--f-display);
+  font-size: clamp(1.8rem, 3.2vw, 2.8rem);
+  font-weight: 800;
+  letter-spacing: -1.5px;
+  color: var(--ink);
+  line-height: 1.1;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .service-entry-inner {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 2rem;
+  }
+
+  .service-entry-head {
+    position: static;
+  }
+
+  .service-deliverables {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .services-hero {
+    padding-top: calc(var(--header-h) + 2rem);
+  }
+
+  .quick-nav-pills {
+    gap: 0.5rem;
+  }
+
+  .services-cta-inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

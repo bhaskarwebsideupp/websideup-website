@@ -1,0 +1,823 @@
+/* ==========================================================================
+   WEBSIDEUP — UNIFIED DESIGN SYSTEM
+   Editorial Warm Paper Atmosphere (#F7F7F6) + WEBSIDEUP Orange + Deep Navy Accent
+   Single Connected Website Architecture
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800;900&display=swap');
+
+/* --------------------------------------------------------------------------
+   1. COLOR SYSTEM & ATMOSPHERE TOKENS
+   - Warm Paper Background (#F7F7F6)
+   - Dominant Brand Typography: WEBSIDEUP Orange (#FF5A1F)
+   - Accent & Structure: Deep Midnight Navy (#081522)
+   - Hairline Lines: (#E4E7EC)
+   -------------------------------------------------------------------------- */
+:root {
+  /* Primary Warm Paper Canvas Background */
+  --c-bg:          #F7F7F6;   /* Exact warm paper / soft off-white */
+  --paper:         #F7F7F6;   /* Editorial warm atmosphere */
+  --c-surface:     #FFFFFF;   /* Pure white card surface */
+  --c-surface-2:   #EFEFED;   /* Subtle elevated surface */
+  --c-surface-3:   #E5E5E2;   /* Structural container */
+
+  /* WEBSIDEUP Signature Orange */
+  --orange:        #FF5A1F;   /* Official WEBSIDEUP Orange */
+  --orange-hover:  #FF7438;
+  --c-orange:      #FF5A1F;
+  --c-orange-dim:  rgba(255, 90, 31, 0.08);
+  --c-orange-glow: rgba(255, 90, 31, 0.25);
+
+  /* Deep Midnight Navy */
+  --ink:           #081522;   /* Deep Midnight Navy */
+  --ink2:          #102337;   /* Secondary deep tone */
+  --ink-muted:     #6E7885;   /* Editorial muted grey-navy */
+  --ink-dim:       #9DA9B5;   /* Meta & label tone */
+  --c-high:        #FF5A1F;   /* Primary dominant headlines in Orange */
+  --c-navy:        #081522;   /* Accent Navy */
+  --c-muted:       #6E7885;   /* Readable body copy */
+  --c-dim:         #9DA9B5;   /* Subtle structural navy */
+  --c-white:       #FFFFFF;
+
+  /* Subtle Lines & Hairline Borders */
+  --line:          #E4E7EC;   /* Clean subtle line */
+  --line-strong:   rgba(8, 21, 34, 0.18);
+  --c-border:      #E4E7EC;
+  --c-border-m:    rgba(8, 21, 34, 0.18);
+  --shadow:        0 20px 60px rgba(8, 21, 34, 0.06);
+
+  /* Typography Stack */
+  --f-display:     'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --f-sans:        'DM Sans', Arial, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --f-mono:        ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+
+  /* Layout & Sizing */
+  --max-w:         1260px;
+  --gutter:        clamp(1.25rem, 4.5vw, 3.5rem);
+  --header-h:      100px;
+  --header-h-scroll: 80px;
+  
+  --nav-bg:        rgba(247, 247, 246, 0.92);
+  --nav-bg-scrolled: rgba(247, 247, 246, 0.98);
+
+  /* Motion Curves */
+  --ease-out:      cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out:   cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+/* --------------------------------------------------------------------------
+   DARK MODE OVERRIDES
+   -------------------------------------------------------------------------- */
+[data-theme="dark"] {
+  --c-bg:          #060c13;
+  --paper:         #060c13;
+  --c-surface:     #0c1520;
+  --c-surface-2:   #121d2b;
+  --c-surface-3:   #1a2839;
+
+  --ink:           #F7F7F6;
+  --ink2:          #D9E1EB;
+  --ink-muted:     #9DA9B5;
+  --ink-dim:       #6E7885;
+  
+  --c-high:        #FF5A1F;
+  --c-navy:        #F7F7F6;
+  --c-muted:       #9DA9B5;
+  --c-dim:         #6E7885;
+  
+  --line:          rgba(255, 255, 255, 0.08);
+  --line-strong:   rgba(255, 255, 255, 0.15);
+  --c-border:      rgba(255, 255, 255, 0.08);
+  --c-border-m:    rgba(255, 255, 255, 0.15);
+  --shadow:        0 20px 60px rgba(0, 0, 0, 0.5);
+
+  --nav-bg:        rgba(6, 12, 19, 0.92);
+  --nav-bg-scrolled: rgba(6, 12, 19, 0.98);
+}
+
+[data-theme="dark"] .nav-logo img {
+  content: url('assets/logos/logo-light.png');
+}
+
+/* --------------------------------------------------------------------------
+   2. RESET & BASE
+   -------------------------------------------------------------------------- */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--c-bg);
+  color: var(--ink);
+  overflow-x: hidden;
+  transition: background-color 0.4s var(--ease-out), color 0.4s var(--ease-out);
+}
+
+body {
+  font-family: var(--f-sans);
+  background: var(--c-bg);
+  color: var(--ink);
+  min-height: 100svh;
+  overflow-x: hidden;
+  line-height: 1.65;
+  cursor: auto;
+  position: relative;
+  letter-spacing: -0.01em;
+  transition: background-color 0.4s var(--ease-out), color 0.4s var(--ease-out);
+}
+
+body.has-custom-cursor {
+  cursor: none;
+}
+
+@media (pointer: coarse) {
+  body, body.has-custom-cursor {
+    cursor: auto !important;
+  }
+}
+
+a, button {
+  touch-action: manipulation;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+img, video {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+button {
+  border: none;
+  background: none;
+  font: inherit;
+  cursor: pointer;
+  color: inherit;
+}
+
+:focus-visible {
+  outline: 2px solid var(--orange);
+  outline-offset: 3px;
+}
+
+/* --------------------------------------------------------------------------
+   3. SCROLL PROGRESS
+   -------------------------------------------------------------------------- */
+#scrollProgress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 3px;
+  background: var(--orange);
+  z-index: 9999;
+  pointer-events: none;
+  transition: width 0.1s linear;
+}
+
+/* --------------------------------------------------------------------------
+   4. MINIMAL CUSTOM CURSOR (Desktop Only)
+   -------------------------------------------------------------------------- */
+#cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 8px;
+  height: 8px;
+  background: var(--orange);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9998;
+  transform: translate(-50%, -50%);
+  transition: width 0.2s var(--ease-out),
+              height 0.2s var(--ease-out),
+              background 0.18s ease,
+              border-color 0.18s ease,
+              opacity 0.2s ease;
+  will-change: transform;
+  display: none;
+}
+
+body.has-custom-cursor #cursor {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#cursor.cursor-hover {
+  width: 44px;
+  height: 44px;
+  background: transparent;
+  border: 1.5px solid var(--orange);
+}
+
+#cursor.cursor-view,
+#cursor.cursor-play {
+  width: 76px;
+  height: 76px;
+  background: rgba(247, 247, 246, 0.96);
+  border: 1.5px solid var(--orange);
+  box-shadow: 0 10px 32px rgba(8, 21, 34, 0.12);
+}
+
+#cursor.cursor-view::after {
+  content: 'VIEW ↗';
+  font-family: var(--f-sans);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: var(--orange);
+  white-space: nowrap;
+}
+
+#cursor.cursor-play::after {
+  content: 'PLAY ▶';
+  font-family: var(--f-sans);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: var(--orange);
+  white-space: nowrap;
+}
+
+/* --------------------------------------------------------------------------
+   5. CONTAINER & SECTION RHYTHM
+   -------------------------------------------------------------------------- */
+.container {
+  width: min(var(--max-w), calc(100% - var(--gutter) * 2));
+  margin: 0 auto;
+}
+
+.section {
+  padding: clamp(5rem, 8.5vw, 8rem) 0;
+  position: relative;
+}
+
+.hr-thin {
+  border: none;
+  border-top: 1px solid var(--line);
+  margin: 0;
+}
+
+/* --------------------------------------------------------------------------
+   6. TYPOGRAPHY SYSTEM (Manrope + DM Sans)
+   -------------------------------------------------------------------------- */
+.type-display {
+  font-family: var(--f-display);
+  font-size: clamp(3.2rem, 7.8vw, 7rem);
+  font-weight: 900;
+  line-height: 0.96;
+  letter-spacing: -2.5px;
+  color: var(--orange);
+  text-transform: uppercase;
+}
+
+.type-headline {
+  font-family: var(--f-display);
+  font-size: clamp(2.4rem, 5vw, 4.8rem);
+  font-weight: 800;
+  line-height: 1.02;
+  letter-spacing: -2px;
+  color: var(--orange);
+  text-transform: uppercase;
+}
+
+.type-heading {
+  font-family: var(--f-display);
+  font-size: clamp(1.6rem, 3vw, 2.6rem);
+  font-weight: 800;
+  line-height: 1.12;
+  letter-spacing: -1px;
+  color: var(--ink);
+}
+
+.type-body {
+  font-family: var(--f-sans);
+  font-size: clamp(1rem, 1.2vw, 1.125rem);
+  line-height: 1.7;
+  color: var(--ink-muted);
+  font-weight: 400;
+  max-width: 56ch;
+}
+
+.type-meta {
+  font-family: var(--f-mono);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-dim);
+}
+
+.eyebrow {
+  font-family: var(--f-display);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--orange);
+  display: inline-block;
+  margin-bottom: 0.75rem;
+}
+
+.accent {
+  color: var(--orange);
+  font-style: normal;
+}
+
+.accent-navy {
+  color: var(--ink);
+  font-style: normal;
+}
+
+/* System descriptor line for disciplines */
+.disciplines-engine {
+  font-family: var(--f-mono);
+  font-size: clamp(0.72rem, 0.95vw, 0.82rem);
+  font-weight: 800;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--ink);
+  margin-top: 0.75rem;
+  display: block;
+}
+
+/* --------------------------------------------------------------------------
+   7. NAVIGATION
+   -------------------------------------------------------------------------- */
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: var(--header-h);
+  z-index: 900;
+  display: flex;
+  align-items: center;
+  transition: background 0.35s ease, border-color 0.35s ease, height 0.35s var(--ease-out), box-shadow 0.35s ease;
+  background: var(--nav-bg);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--line);
+}
+
+.site-header.scrolled {
+  background: var(--nav-bg-scrolled);
+  height: var(--header-h-scroll);
+  box-shadow: 0 10px 30px rgba(8, 21, 34, 0.05);
+}
+
+.nav-inner {
+  width: 100%;
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* WEBSIDEUP LOGO */
+.nav-logo {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  padding: 0.25rem 0;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.nav-logo:hover {
+  opacity: 0.88;
+  transform: translateY(-1px);
+}
+
+.nav-logo img {
+  height: clamp(65px, 8vw, 90px);
+  width: auto;
+  display: block;
+  transform: scale(2.4);
+  transform-origin: left center;
+  transition: height 0.3s var(--ease-out), transform 0.3s ease;
+}
+
+.site-header.scrolled .nav-logo img {
+  height: clamp(50px, 6vw, 65px);
+  transform: scale(2.0);
+}
+
+@media (max-width: 1024px) {
+  .nav-logo img {
+    height: clamp(45px, 6vw, 60px);
+    transform: scale(2.0);
+  }
+  .site-header.scrolled .nav-logo img {
+    height: clamp(40px, 5vw, 50px);
+    transform: scale(1.6);
+  }
+}
+
+@media (max-width: 640px) {
+  .nav-logo img {
+    height: clamp(38px, 5vw, 45px);
+    transform: scale(1.8);
+  }
+  .site-header.scrolled .nav-logo img {
+    height: clamp(32px, 4vw, 40px);
+    transform: scale(1.5);
+  }
+}
+
+/* 4 Clean Navigation Links */
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 2.2rem;
+}
+
+.nav-link {
+  font-family: var(--f-sans);
+  font-size: 0.938rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--ink);
+  transition: color 0.2s ease;
+  position: relative;
+  padding: 0.5rem 0;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 2px;
+  background: var(--orange);
+  border-radius: 9px;
+  transition: width 0.25s var(--ease-out);
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: var(--orange);
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 22px;
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.theme-toggle {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: var(--ink);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+  border-radius: 50%;
+  transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+.theme-toggle:hover {
+  background: rgba(100, 100, 100, 0.1);
+  transform: scale(1.05);
+  color: var(--orange);
+}
+
+.nav-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 11px 22px;
+  border-radius: 999px;
+  font-family: var(--f-sans);
+  font-size: 0.813rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #FFFFFF;
+  background: var(--orange);
+  box-shadow: 0 8px 22px rgba(255, 90, 31, 0.25);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+  white-space: nowrap;
+}
+
+.nav-cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(255, 90, 31, 0.35);
+  background: var(--orange-hover);
+}
+
+/* Mobile Toggle */
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 26px;
+  height: 18px;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  padding: 0;
+  flex-shrink: 0;
+  z-index: 950;
+  position: relative;
+}
+
+.nav-toggle span {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background: var(--ink);
+  border-radius: 1px;
+  transition: transform 0.3s var(--ease-out), opacity 0.25s ease;
+  transform-origin: center;
+}
+
+.nav-toggle.open span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+.nav-toggle.open span:nth-child(2) { opacity: 0; }
+.nav-toggle.open span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+
+/* Mobile Drawer */
+.mobile-drawer {
+  position: fixed;
+  inset: 0;
+  background: var(--paper);
+  z-index: 850;
+  display: flex;
+  flex-direction: column;
+  padding: calc(var(--header-h) + 1.5rem) var(--gutter) 2.5rem;
+  transform: translateX(100%);
+  transition: transform 0.35s var(--ease-out);
+  visibility: hidden;
+  overflow-y: auto;
+}
+
+.mobile-drawer.open {
+  transform: translateX(0);
+  visibility: visible;
+}
+
+.mobile-nav-links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: auto;
+}
+
+.mobile-nav-link {
+  font-family: var(--f-display);
+  font-size: clamp(2rem, 8vw, 3.2rem);
+  font-weight: 900;
+  letter-spacing: -1px;
+  text-transform: uppercase;
+  color: var(--ink);
+  padding: 0.75rem 0;
+  border-bottom: 1px solid var(--line);
+  transition: color 0.2s ease, padding-left 0.2s ease;
+}
+
+.mobile-nav-link:hover,
+.mobile-nav-link.active {
+  color: var(--orange);
+  padding-left: 0.5rem;
+}
+
+.mobile-nav-meta {
+  padding-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.mobile-nav-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.88rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #FFFFFF;
+  padding: 13px 26px;
+  background: var(--orange);
+  border-radius: 999px;
+  margin-top: 1rem;
+  align-self: flex-start;
+  box-shadow: 0 10px 25px rgba(255, 90, 31, 0.25);
+}
+
+/* --------------------------------------------------------------------------
+   8. BUTTONS (PILL-SHAPED RESTRAINED ACCENTS)
+   -------------------------------------------------------------------------- */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  padding: 13px 28px;
+  background: var(--orange);
+  color: #FFFFFF;
+  font-family: var(--f-sans);
+  font-size: 0.875rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  box-shadow: 0 10px 28px rgba(255, 90, 31, 0.25);
+  transition: transform 0.25s var(--ease-out), box-shadow 0.25s ease, background 0.2s ease;
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  transform: translateY(-3px);
+  background: var(--orange-hover);
+  box-shadow: 0 14px 32px rgba(255, 90, 31, 0.35);
+}
+
+.btn-secondary,
+.btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  padding: 12px 26px;
+  border: 1.5px solid var(--ink);
+  color: var(--ink);
+  font-family: var(--f-sans);
+  font-size: 0.875rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  border-radius: 999px;
+  background: transparent;
+  transition: border-color 0.2s ease, color 0.2s ease, background 0.2s ease, transform 0.2s ease;
+  cursor: pointer;
+}
+
+.btn-secondary:hover,
+.btn-ghost:hover {
+  border-color: var(--orange);
+  color: var(--orange);
+  background: var(--c-orange-dim);
+  transform: translateY(-2px);
+}
+
+/* --------------------------------------------------------------------------
+   9. REVEALS & MOTION
+   -------------------------------------------------------------------------- */
+.reveal {
+  opacity: 0;
+  transform: translate3d(0, 24px, 0);
+  will-change: opacity, transform;
+}
+
+.reveal.in-view {
+  animation: reveal-in 0.75s var(--ease-out) forwards;
+}
+
+@keyframes reveal-in {
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+body.page-loaded .reveal-on-load {
+  animation: reveal-in 0.85s var(--ease-out) forwards;
+}
+
+/* --------------------------------------------------------------------------
+   10. SITE FOOTER
+   -------------------------------------------------------------------------- */
+.site-footer {
+  border-top: 1px solid var(--line);
+  padding: 5rem 0 2.5rem;
+  background: var(--ink);
+  color: #FFFFFF;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1.1fr);
+  gap: 3.5rem;
+  padding-bottom: 3.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  margin-bottom: 2.5rem;
+}
+
+.footer-brand-mark {
+  height: 42px;
+  width: auto;
+  margin-bottom: 1.25rem;
+}
+
+.footer-tagline {
+  font-size: 0.90rem;
+  color: #9DA9B5;
+  max-width: 32ch;
+  line-height: 1.65;
+}
+
+.footer-col-label {
+  font-family: var(--f-display);
+  font-size: 0.875rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #FFFFFF;
+  margin-bottom: 1.25rem;
+}
+
+.footer-col a, .footer-col p {
+  display: block;
+  font-size: 0.90rem;
+  color: #9DA9B5;
+  margin-bottom: 0.65rem;
+  transition: color 0.2s ease;
+}
+
+.footer-col a:hover {
+  color: var(--orange);
+}
+
+.footer-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.footer-copy {
+  font-size: 0.813rem;
+  color: #6E7885;
+}
+
+.footer-back-top {
+  font-size: 0.813rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #9DA9B5;
+  transition: color 0.2s ease;
+}
+
+.footer-back-top:hover {
+  color: var(--orange);
+}
+
+/* --------------------------------------------------------------------------
+   11. RESPONSIVE BREAKPOINTS
+   -------------------------------------------------------------------------- */
+@media (max-width: 1024px) {
+  .nav-links { display: none; }
+  .nav-toggle { display: flex; }
+  .footer-grid { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+}
+
+@media (max-width: 640px) {
+  .nav-cta { display: none; }
+  .footer-grid { grid-template-columns: minmax(0, 1fr); gap: 2.5rem; }
+  .footer-bottom { flex-direction: column; align-items: flex-start; gap: 1rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
+  #cursor { display: none !important; }
+}
+
+::selection {
+  background: var(--orange);
+  color: #FFFFFF;
+}

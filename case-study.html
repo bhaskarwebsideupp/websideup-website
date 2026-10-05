@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title id="pageTitle">Case Study — WebsideUp</title>
+  <meta name="description" id="pageDesc" content="WebsideUp case study.">
+  <meta name="theme-color" content="#080B11">
+  <link rel="icon" type="image/png" href="assets/logos/logo-trimmed.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@1&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="system.css">
+  <link rel="stylesheet" href="inner-pages.css">
+</head>
+<body>
+
+  <div id="scrollProgress" role="presentation" aria-hidden="true"></div>
+  <div id="cursor" aria-hidden="true"></div>
+
+  <header class="site-header" id="siteHeader">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo" aria-label="WebsideUp — Home">
+        <img src="assets/logos/logo-light.png" alt="WebsideUp" width="120" height="68">
+      </a>
+      <nav class="nav-links" aria-label="Primary Navigation">
+        <a href="work.html" class="nav-link active">Work</a>
+        <a href="services.html" class="nav-link">Services</a>
+        <a href="process.html" class="nav-link">Process</a>
+        <a href="about.html" class="nav-link">About</a>
+      </nav>
+      <div class="nav-right">
+                <button id="themeToggle" class="theme-toggle" aria-label="Toggle Dark Mode">
+          <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+          <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18" style="display:none;"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+        </button>
+        <a href="contact.html" class="nav-cta" id="navCta">Start a Project <span aria-hidden="true">↗</span></a>
+        <button class="nav-toggle" id="navToggle" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobileDrawer">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <div class="mobile-drawer" id="mobileDrawer" aria-hidden="true">
+    <nav class="mobile-nav-links">
+      <a href="work.html" class="mobile-nav-link active">Work</a>
+      <a href="services.html" class="mobile-nav-link">Services</a>
+      <a href="process.html" class="mobile-nav-link">Process</a>
+      <a href="about.html" class="mobile-nav-link">About</a>
+    </nav>
+    <div class="mobile-nav-meta">
+      <a href="contact.html" class="mobile-nav-cta">Start a Project ↗</a>
+    </div>
+  </div>
+
+  <main>
+
+    <!-- CS HERO -->
+    <section class="cs-hero section" aria-labelledby="csTitle">
+      <div class="container">
+        <a href="work.html" class="btn-arrow cs-back-link" style="margin-bottom:2rem;display:inline-flex">
+          <span class="arrow" aria-hidden="true" style="transform:rotate(180deg) translate(2px,2px)">↗</span> All Work
+        </a>
+        <p class="eyebrow cs-category reveal-on-load" id="csCategory" style="animation-delay:0.1s">Loading…</p>
+        <h1 class="type-display cs-title reveal-on-load" id="csTitle" style="animation-delay:0.25s;font-size:clamp(3rem,8vw,8rem)">
+          <span id="csTitleLine1">—</span><br>
+          <span id="csTitleLine2" class="serif accent"></span>
+        </h1>
+
+        <!-- Metadata bar -->
+        <div class="cs-meta reveal-on-load" id="csMeta" style="animation-delay:0.4s">
+          <div class="cs-meta-item" id="metaServicesWrapper">
+            <p class="cs-meta-label">Services</p>
+            <p class="cs-meta-value" id="metaServices">—</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hero media -->
+      <div class="container">
+        <div class="cs-hero-media reveal" id="csHeroMedia">
+          <img src="assets/posters/poster-01-social.jpg" alt="Case study hero media" class="cs-hero-img" id="csHeroImg">
+        </div>
+      </div>
+    </section>
+
+    <!-- OVERVIEW -->
+    <section class="section" id="sectionOverview" aria-labelledby="overviewLabel">
+      <div class="container">
+        <div class="cs-text-section reveal">
+          <p class="cs-section-label" id="overviewLabel">Overview</p>
+          <p class="cs-section-text" id="csOverviewText"></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CHALLENGE -->
+    <section id="sectionChallenge" aria-labelledby="challengeLabel" hidden>
+      <div class="container">
+        <div class="cs-text-section reveal">
+          <p class="cs-section-label" id="challengeLabel">The Challenge</p>
+          <p class="cs-section-text" id="csChallengeText"></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- APPROACH -->
+    <section id="sectionApproach" aria-labelledby="approachLabel" hidden>
+      <div class="container">
+        <div class="cs-text-section reveal">
+          <p class="cs-section-label" id="approachLabel">Our Approach</p>
+          <p class="cs-section-text" id="csApproachText"></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- THE WORK / GALLERY -->
+    <section id="sectionWork" aria-label="Project work gallery">
+      <div class="container">
+        <hr class="hr-thin" style="margin:0 0 3rem">
+        <p class="eyebrow" style="margin-bottom:2rem">The Work</p>
+        <div class="cs-gallery" id="csGallery"></div>
+      </div>
+    </section>
+
+    <!-- RESULTS -->
+    <section id="sectionResults" aria-label="Project results" hidden>
+      <div class="container">
+        <hr class="hr-thin" style="margin:0 0 3rem">
+        <p class="eyebrow" style="margin-bottom:2rem">Results</p>
+        <div class="cs-results-grid" id="csResultsGrid"></div>
+      </div>
+    </section>
+
+    <hr class="hr-thin" style="margin:5rem 0 0">
+
+    <!-- NEXT PROJECT -->
+    <section class="cs-next section" id="sectionNextProject" aria-label="Next project">
+      <div class="container">
+        <p class="cs-next-label">Next Project</p>
+        <a href="" class="cs-next-link" id="csNextLink">
+          <span class="cs-next-title" id="csNextTitle">—</span>
+          <span class="cs-next-arrow" aria-hidden="true">↗</span>
+        </a>
+      </div>
+    </section>
+
+    <hr class="hr-thin">
+
+    <!-- CTA -->
+    <section class="section" aria-labelledby="csCtaHeading">
+      <div class="container">
+        <div class="page-outro reveal">
+          <h2 class="type-headline page-outro-title" id="csCtaHeading">
+            Want results like<br>this for your brand?<br><span class="serif accent">Let's talk.</span>
+          </h2>
+          <a href="contact.html" class="btn-primary">Start a Project ↗</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand-col">
+          <img src="assets/logos/logo-light.png" alt="WebsideUp" class="footer-brand-mark" width="100">
+          <p class="footer-tagline">Built to look good. Built to work.</p>
+        </div>
+        <div class="footer-col">
+          <p class="footer-col-label">Navigate</p>
+          <a href="work.html">Work</a>
+          <a href="services.html">Services</a>
+          <a href="process.html">Process</a>
+          <a href="about.html">About</a>
+          <a href="contact.html">Contact</a>
+        </div>
+        <div class="footer-col">
+          <p class="footer-col-label">Contact</p>
+          <a href="mailto:websideup@gmail.com">websideup@gmail.com</a>
+          <a href="tel:+919310150768">+91-9310150768</a>
+        </div>
+        <div class="footer-col">
+          <p class="footer-col-label">Location</p>
+          <p>Delhi, India</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-copy">© 2026 WebsideUp. All rights reserved.</p>
+        <a href="#siteHeader" class="footer-back-top" id="backToTop">Back to top ↑</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="projects-data.js"></script>
+  <script src="site.js"></script>
+  <script src="case-study.js"></script>
+</body>
+</html>
